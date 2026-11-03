@@ -1,0 +1,282 @@
+[
+ {
+  "name": "blur-slide",
+  "summary": "标题逐词入场，y 0.38em→0 + blur 18→0 + opacity 0→1 三通道走同一条 ease-out 同步收敛，词间隔约 4f；副标题在标题收完前就错峰跟进",
+  "use": "几乎所有标题/副标题成对出现的场合；产品页首屏文案、章节小标题；需要\"专业但不抢戏\"的默认文字 reveal",
+  "duration": "约 4.0s（120f@30fps）",
+  "energy": "低（一次性收敛，无峰值无循环）",
+  "intention": "这是文字 reveal 的**默认解**——没有奇观、没有机械感，只是把词一个个 柔和地放到位。它的专业感全来自一件事：y、blur、opacity 三个通道共用 同一个进度 `p`、同一条缓动，所以词是\"从虚焦里浮出来\"而不是\"滑进来 顺便淡一下\"。当一支片里已经有别的重手法（乱码/滚轮），标题就该 用这一卡，让位给主角。",
+  "source": "references/shots/typography/blur-slide.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "blur-slide",
+    "label": "blur-slide",
+    "description": "标题逐词入场，y 0.38em→0 + blur 18→0 + opacity 0→1 三通道走同一条 ease-out 同步收敛，词间隔约 4f；副标题在标题收完前就错峰跟进",
+    "media": {
+     "url": "./media/blur-slide.mp4?v=1790980736774",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/blur-slide.md",
+  "category": "typography",
+  "tags": [
+   "typography"
+  ],
+  "addedAt": "2026-08-07T04:03:34.000Z"
+ },
+ {
+  "name": "deck-deal-flyin",
+  "summary": "暗色石墨桌面上的实体牌堆特写环绕开局，灯从牌堆亮到旁边的页面板，一摞卡像发牌一样硬加速甩进网格，相机追着发牌升起后仰、落在整块满板的跑道式俯瞰上定格",
+  "use": "展示\"内容量大/源源不断汇入\"的列表页与卡片墙；建立信息密度的第一印象",
+  "duration": "150f（约 5s：0–36 牌堆特写 + 预备，36–~101 发牌，108–150 满板 hold）",
+  "energy": "高（节奏爬升段主力，不放开场第一镜）",
+  "intention": "先给悬念（这一摞是什么？），再给答案（是几十个项目，它们自己飞进页面各就各位）。观众要感受到\"东西源源不断地涌进来\"，每张卡带着急迫感砸到位。",
+  "source": "references/shots/ui-entrance/deck-deal-flyin.md",
+  "updatedAt": "2026-10-02T14:33:18.000Z",
+  "styles": [
+   {
+    "key": "deck-deal-flyin",
+    "label": "deck-deal-flyin",
+    "description": "暗色石墨桌面上的实体牌堆特写环绕开局，灯从牌堆亮到旁边的页面板，一摞卡像发牌一样硬加速甩进网格，相机追着发牌升起后仰、落在整块满板的跑道式俯瞰上定格",
+    "media": {
+     "url": "./media/deck-deal-flyin.mp4?v=1790980736797",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/deck-deal-flyin.md",
+  "category": "ui-entrance",
+  "tags": [
+   "ui-entrance"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "depth-layer-moves",
+  "summary": "分层深度运镜——多层视差滑轨：3 层速度梯度横移出纵深，滑轨落定时主角浮起",
+  "use": "平面截图要\"有厚度\"的段落：卡组 / 列表 / 整页的横向巡览",
+  "duration": "4–5.5s 持续（demo 165f）",
+  "energy": "中（质感型）",
+  "intention": "整页平移是\"看页面\"，分层深度是\"在页面的空间里\"。视差滑轨给横移 加纵深（迪士尼多平面摄影机原理，Linear 片同款质感）。",
+  "source": "references/shots/camera/depth-layer-moves.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "multiplane",
+    "label": "multiplane",
+    "description": "分层深度运镜——多层视差滑轨：3 层速度梯度横移出纵深，滑轨落定时主角浮起",
+    "media": {
+     "url": "./media/multiplane.mp4?v=1790980736798",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/depth-layer-moves.md",
+  "category": "camera",
+  "tags": [
+   "camera"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "glow-flyline-moves",
+  "summary": "暗场光斑与飞线三式——glow-orb-ambient 光斑底噪、flyline-arc 飞线连接、orb-flyline-relay 同帧共振组合",
+  "use": "全片唯一暗场段落的氛围与数据叙事：铺底噪用 A、讲数据流向用 B、要背景给前景搭腔用 C；Linear 官网味",
+  "duration": "A 170f（~5.7s）/ B 140f（~4.7s）/ C 165f（5.5s）",
+  "energy": "A 低（底噪级）/ B 中 / C 中高",
+  "intention": "这是库内第一张整卡住在**暗场**的卡。白底提亮不可见判例反过来读就是： 要玩光，先去暗场。A 是空间的呼吸——深色底三团大光斑有机漂移，从中央 磨砂玻璃卡背后游过、颜色透过玻璃染进卡面，卡缘随最近光斑靠近而泛光， 背景不再是死的；B 是数据的动词——发光弧线从 A 卡\"打\"到 B 卡， 亮点头领跑、渐隐光尾，落点描边脉冲点亮，指标关联第一次有了方向；C 是 A+B 的焊接——飞线落点帧邻近光斑同帧涨亮一拍， 氛围层与事件层**同帧共振**，互相搭腔而非各演各的（组合命门：拆开共振帧 就退化成两张卡并置）。",
+  "source": "references/shots/effects/glow-flyline-moves.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "glow-orb-ambient",
+    "label": "glow-orb-ambient",
+    "description": "三团 500-700px radial 光斑 + blur(100px)，双正弦漂移；卡缘辉光按光斑距离 [180,720]px→[1,0] 加权取 max 驱动",
+    "use": "暗场段落铺底；卡呼吸感",
+    "media": {
+     "url": "./media/glow-orb-ambient.mp4?v=1790980736810",
+     "type": "mp4"
+    }
+   },
+   {
+    "key": "flyline-arc",
+    "label": "flyline-arc",
+    "description": "手写 bezier 100 段采样，22f out-cubic 生长；光头条件挂载领跑，段 opacity 按离头距离渐隐；落点描边脉冲，可接力",
+    "use": "数据流向/指标关联；dashboard 叙事",
+    "media": {
+     "url": "./media/flyline-arc.mp4?v=1790980736811",
+     "type": "mp4"
+    }
+   },
+   {
+    "key": "orb-flyline-relay",
+    "label": "orb-flyline-relay",
+    "description": "A+B 焊接：光斑 surge 与卡脉冲共用落点帧，涨亮 1+1.6×surge、5f 起升 15f 消散",
+    "use": "暗场高光段；三卡接力收束",
+    "media": {
+     "url": "./media/orb-flyline-relay.mp4?v=1790980736812",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/glow-flyline-moves.md",
+  "category": "effects",
+  "tags": [
+   "effects",
+   "data"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "row-embed",
+  "summary": "内容行像卡片一样从空中降下、rotateX 收平、嵌入瞬间底边亮一道强调色的缝",
+  "use": "\"结构化数据长进页面\"的详情页/列表镜头；行级内容的批量入场",
+  "duration": "约 2s（12–68f）",
+  "energy": "中",
+  "intention": "详情页的行不是\"显示出来\"而是\"长进去\"——每一行从空中降下并严丝合缝嵌入页面布局，嵌入瞬间的强调色缝是\"咔哒\"扣上的视觉拟音。",
+  "source": "references/shots/ui-entrance/row-embed.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "row-embed",
+    "label": "row-embed",
+    "description": "内容行像卡片一样从空中降下、rotateX 收平、嵌入瞬间底边亮一道强调色的缝",
+    "media": {
+     "url": "./media/row-embed.mp4?v=1790980736857",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/row-embed.md",
+  "category": "ui-entrance",
+  "tags": [
+   "ui-entrance"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "stroke-segment-build",
+  "summary": "断笔成字——标题拆成十几段互不相连的笔画乱序逐段点亮，前 70% 不可读，末段落位瞬间语义\"啪\"地成立",
+  "use": "开场吊悬念的产品名/大数字揭晓；一支片 ≤1 次；与 type-assembly/draw-svg-trace 分工：那些是\"看着字被组装/描画\"，本卡是\"意义延迟揭晓\"",
+  "duration": "165f（5.5s；揭晓 f105 后 hold 2s）",
+  "energy": "低起中收（悬念型，落位帧是能量点）",
+  "intention": "《异形》片头判例：标题不是被画出来的，是\"显影\"出来的——拆成离散 笔画段乱序点亮，观众前 70% 时间只看到神秘碎段，最后几段落位的瞬间 突然读出是什么字。\"认出的那一刻\"就是钩子，钩子的强度取决于 不可读期撑多久、钥匙段压多晚。",
+  "source": "references/shots/opening/stroke-segment-build.md",
+  "updatedAt": "2026-10-02T14:33:18.000Z",
+  "styles": [
+   {
+    "key": "stroke-segment-build",
+    "label": "stroke-segment-build",
+    "description": "断笔成字——标题拆成十几段互不相连的笔画乱序逐段点亮，前 70% 不可读，末段落位瞬间语义\"啪\"地成立",
+    "media": {
+     "url": "./media/stroke-segment-build.mp4?v=1790980736878",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/stroke-segment-build.md",
+  "category": "opening",
+  "tags": [
+   "opening",
+   "typography"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "tension-camera-moves",
+  "summary": "情绪运镜两式——bullet-time 冻结环绕、pull-back 拉远孤立，相机替观众\"感受\"而非\"看\"",
+  "use": "情绪节点（震撼/收束）的运镜语言；与 space-camera-moves 的\"炫技大动作\"互补——这两式动作小、情绪重",
+  "duration": "单式 5–6s（150–170f）；全片合计 ≤2 式（各 ≤1 次）",
+  "energy": "A 高 / B 低收",
+  "intention": "space-camera-moves 三式是\"把页面当 3D 实体拍\"的高光炫技；这两式相反—— 动作本身克制，全部劲道在情绪语义上：A 说\"这一刻值得停下时间看\" （运动中的元素被冻住、相机绕行审视）；B 说\"最后只剩这一件事\" （后拉中周围逐层熄灭，孤悬一点收束全片）。两式各占一个情绪格， 是分镜阶段\"这一段观众该感到什么\"的直接词汇。",
+  "source": "references/shots/camera/tension-camera-moves.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "bullet-time-freeze-orbit",
+    "label": "bullet-time-freeze-orbit 冻结环绕",
+    "description": "图表生长到一半全冻住，相机绕悬停的 UI 平面 rotateY 扫 55° 再回，时间恢复接着长完",
+    "use": "核心数据/图表的加冕时刻；\"值得停表看\"的一格",
+    "media": {
+     "url": "./media/bullet-time-freeze-orbit.mp4?v=1790980736880",
+     "type": "mp4"
+    }
+   },
+   {
+    "key": "pull-back-isolation",
+    "label": "pull-back-isolation 拉远孤立",
+    "description": "从发光主卡特写后拉，兄弟卡按距离错峰熄灭、背景沉黑，孤卡悬在暗场中央",
+    "use": "结尾收束；\"全片只为这一个数字\"的谢幕",
+    "media": {
+     "url": "./media/pull-back-isolation.mp4?v=1790980736881",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/tension-camera-moves.md",
+  "category": "camera",
+  "tags": [
+   "camera"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "trailer-grammar-moves",
+  "summary": "预告片语法一式——trailer-bumper 前置速剪钩子：三镜 9f 速剪 + 黑场静默一拍，再开场标题",
+  "use": "预告片的开场钩子（cold open）：正片前先塞三个最抓眼的镜头，再静默一拍正式开场",
+  "duration": "A ~4.7s（140f）",
+  "energy": "A 高",
+  "intention": "库内节奏卡各管一段：beat-cut 管切点排布、rhythm-interrupt 管打断。 本卡管**预告片的结构性时刻**——不是某个 镜头怎么动，是整片的关节怎么接：A 是开场钩——正片前 0.9 秒塞 三个最抓眼镜头速剪 + 黑场静默一拍再开场，预告片的\"预告\"。",
+  "source": "references/shots/rhythm/trailer-grammar-moves.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "trailer-bumper",
+    "label": "trailer-bumper",
+    "description": "预告片语法一式——trailer-bumper 前置速剪钩子：三镜 9f 速剪 + 黑场静默一拍，再开场标题",
+    "use": "正片开场前的钩子；cold open",
+    "media": {
+     "url": "./media/trailer-bumper.mp4?v=1790980736889",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/trailer-grammar-moves.md",
+  "category": "rhythm",
+  "tags": [
+   "rhythm",
+   "opening",
+   "transition"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ },
+ {
+  "name": "voice-waveform-live",
+  "summary": "录音胶囊实时声纹——64 根细竖条随\"说话\"起伏，说话时中部高耸、停顿缩成点线，波形从右往左滚动；说→停→说→提交塌缩的完整表演",
+  "use": "语音输入/AI 助手\"正在听你说\"的功能镜头；无 UI 内容可展示但需要持续活性撑画面的段落",
+  "duration": "172f（~5.7s：入场 14f + 说 1.4s + 停 0.8s + 说 1.4s + 提交塌缩 / 收进气泡 0.8s + hold 0.7s）",
+  "energy": "中（功能性活性，不是炫技）",
+  "intention": "本卡是**功能性**声纹：\"正在听你说\"的实时回执。命门在因果： 波形跟\"用户说话\"跳、是产品功能本身，不是跟 BGM 跳的装饰包装。 说话时波形高耸、停顿时缩成一排点线、历史向左滚出——观众从波形的起伏读出\"它真的在听\"，一段 6s+ 的画面全靠这份 活性撑住，不需要任何别的内容。与 gauge-readout-moves 分工：仪表是 \"报一个数值\"的机械仪式，本卡是\"持续监听\"的生命体征，没有终值。",
+  "source": "references/shots/interaction/voice-waveform-live.md",
+  "updatedAt": "2026-10-02T21:01:48.000Z",
+  "styles": [
+   {
+    "key": "voice-waveform-live",
+    "label": "voice-waveform-live",
+    "description": "录音胶囊实时声纹——64 根细竖条随\"说话\"起伏，说话时中部高耸、停顿缩成点线，波形从右往左滚动；说→停→说→提交塌缩的完整表演",
+    "media": {
+     "url": "./media/voice-waveform-live.mp4?v=1790980736907",
+     "type": "mp4"
+    }
+   }
+  ],
+  "sourceUrl": "./source/voice-waveform-live.md",
+  "category": "interaction",
+  "tags": [
+   "interaction"
+  ],
+  "addedAt": "2026-07-19T05:45:41.000Z"
+ }
+]
