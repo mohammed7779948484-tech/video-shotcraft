@@ -1,0 +1,152 @@
+{
+ "generator": "tools/make_audio.py",
+ "license": "original synthesis (numpy), fixed seeds",
+ "note": "Freesound unreachable from sandbox (HTTP 403); not auditioned by ear, measured only",
+ "items": {
+  "thump": {
+   "file": "audio/sfx/thump.wav",
+   "dur_s": 0.45,
+   "sha256": "04a59c91a067b511"
+  },
+  "thump_soft": {
+   "file": "audio/sfx/thump_soft.wav",
+   "dur_s": 0.35,
+   "sha256": "e3704b810052a5bc"
+  },
+  "impact_big": {
+   "file": "audio/sfx/impact_big.wav",
+   "dur_s": 2.6,
+   "sha256": "9acc8b8f67042820"
+  },
+  "whoosh_short": {
+   "file": "audio/sfx/whoosh_short.wav",
+   "dur_s": 0.28,
+   "sha256": "747cefd03e3219b1"
+  },
+  "whoosh_air": {
+   "file": "audio/sfx/whoosh_air.wav",
+   "dur_s": 1.2,
+   "sha256": "67a4cac773da257b"
+  },
+  "whoosh_exit": {
+   "file": "audio/sfx/whoosh_exit.wav",
+   "dur_s": 1.0,
+   "sha256": "b47fda55d30582e7"
+  },
+  "breath_swell": {
+   "file": "audio/sfx/breath_swell.wav",
+   "dur_s": 0.9,
+   "sha256": "c541d44dad30a850"
+  },
+  "riser_2s": {
+   "file": "audio/sfx/riser_2s.wav",
+   "dur_s": 2.4,
+   "sha256": "6c53a96fc81bb794"
+  },
+  "riser_plunge": {
+   "file": "audio/sfx/riser_plunge.wav",
+   "dur_s": 0.5,
+   "sha256": "55db53b0b9672898"
+  },
+  "tink_a": {
+   "file": "audio/sfx/tink_a.wav",
+   "dur_s": 0.7,
+   "sha256": "00e548ee735a4b24"
+  },
+  "tink_b": {
+   "file": "audio/sfx/tink_b.wav",
+   "dur_s": 0.6,
+   "sha256": "dc00945377c130b7"
+  },
+  "tink_lid": {
+   "file": "audio/sfx/tink_lid.wav",
+   "dur_s": 0.9,
+   "sha256": "ec9e51ec8d26310c"
+  },
+  "bell_birth": {
+   "file": "audio/sfx/bell_birth.wav",
+   "dur_s": 1.6,
+   "sha256": "ab60de464e3adcac"
+  },
+  "bell_hi": {
+   "file": "audio/sfx/bell_hi.wav",
+   "dur_s": 1.4,
+   "sha256": "b9b956f658afa102"
+  },
+  "sparkle_tail": {
+   "file": "audio/sfx/sparkle_tail.wav",
+   "dur_s": 2.2,
+   "sha256": "af5346ab13c6e55a"
+  },
+  "shimmer_up": {
+   "file": "audio/sfx/shimmer_up.wav",
+   "dur_s": 1.3,
+   "sha256": "fea978c1487bfcf7"
+  },
+  "tick_a": {
+   "file": "audio/sfx/tick_a.wav",
+   "dur_s": 0.22,
+   "sha256": "9938c98c9acd1f60"
+  },
+  "tick_b": {
+   "file": "audio/sfx/tick_b.wav",
+   "dur_s": 0.22,
+   "sha256": "8b18748f6f4b8137"
+  },
+  "tick_c": {
+   "file": "audio/sfx/tick_c.wav",
+   "dur_s": 0.22,
+   "sha256": "b4788df1e008fa4c"
+  },
+  "key_1": {
+   "file": "audio/sfx/key_1.wav",
+   "dur_s": 0.9,
+   "sha256": "dfa2aff18a931f28"
+  },
+  "key_2": {
+   "file": "audio/sfx/key_2.wav",
+   "dur_s": 0.9,
+   "sha256": "5cfb53e05f062896"
+  },
+  "key_3": {
+   "file": "audio/sfx/key_3.wav",
+   "dur_s": 0.9,
+   "sha256": "002aee3232704dba"
+  },
+  "pat_a": {
+   "file": "audio/sfx/pat_a.wav",
+   "dur_s": 0.2,
+   "sha256": "c2789b13b3078de9"
+  },
+  "pat_b": {
+   "file": "audio/sfx/pat_b.wav",
+   "dur_s": 0.2,
+   "sha256": "69c638c3e31716f3"
+  },
+  "card_whip": {
+   "file": "audio/sfx/card_whip.wav",
+   "dur_s": 0.22,
+   "sha256": "bd826264964561c2"
+  },
+  "heartbeat": {
+   "file": "audio/sfx/heartbeat.wav",
+   "dur_s": 1.1,
+   "sha256": "0441ce844db2819f"
+  },
+  "crickets": {
+   "file": "audio/sfx/crickets.wav",
+   "dur_s": 6.0,
+   "sha256": "b342c7516319ed5b"
+  },
+  "room_air": {
+   "file": "audio/sfx/room_air.wav",
+   "dur_s": 5.0,
+   "sha256": "89bb5cc71043abe3"
+  },
+  "bgm": {
+   "file": "audio/bgm.wav",
+   "dur_s": 20.0,
+   "sha256": "5135a8708ad7b522"
+  }
+ }
+}
