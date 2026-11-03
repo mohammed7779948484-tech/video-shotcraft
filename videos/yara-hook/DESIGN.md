@@ -66,13 +66,22 @@ back), reveal 0.58→1→1.25→1, room lights with lit-count (physical: more fr
 
 ## 5. Sound
 
-All audio is synthesised by `tools/make_audio.py` (numpy, fixed seeds) → `public/audio/`:
-~28 SFX (thump, soft whoosh, **glass tinks (inharmonic partials)**, warm bells, soft ticks for ignition,
-felt pats for cards, riser → impact → sparkle for the reveal) and a 20 s score (Dm→B♭→Gm→F→D major
-resolution + harp plucks pinned to the arrivals/cards/keys). Vocabulary follows S1 (riser/impact/sparkle/
-whoosh; no game bleeps; glass/paper are foley-style). The picture's silences (teaser black, night→jar
-black) are real silences. Pins are a declarative table in `src/SfxLayer.tsx`, derived from scene constants.
-Two deliveries: with score, and without score (SFX kept) via `--props=props-nobgm.json`.
+**Freesound CC0 recordings (19 cues, `public/audio/fs/` + processed into `public/audio/sfx/`)**, chosen by source match
+(then rating/downloads as supporting evidence) with the skill's `sfx-source.py` (licence re-checked on each page, SHA-256 +
+analysis stored in `public/audio/fs/audio-manifest.json`, credits in `FREESOUND-CREDITS.md`):
+glass clinks ×3 (fs:738633, fs:560298, fs:262958 — jar arrivals alternate two different glasses, lid note a third),
+card snap + soft sub kick (fs:120508, fs:784658 — alternating landings), whooshes (fs:701104, fs:267950),
+riser (fs:685256), sub-bass drop and boom (fs:428073 teaser hits, fs:856174 flash + REVEAL impact),
+crystal twinkle / sparkle flourish / little bells (fs:639429, fs:844398, fs:759840), heartbeat (fs:384662),
+night crickets (fs:424871), wing-flap foley (fs:561009). `tools/process_freesound.py` cuts the action window (a few ms
+before each energy peak), peak-normalises to 0.9 (some sources were as quiet as −34 dBFS; one preview peaked at +1.25 dBFS),
+fades it and logs every cut/gain in `audio-manifest.json -> freesound_cues`. The files are **lossy MP3 previews**, not
+uploader originals.
+**Still synthesised (`tools/make_audio.py`)**: ignition ticks, three key tones, shimmer-up, breath swell, room air, and the whole
+**score** (Dm → B♭ → Gm → F → D-major resolution pad + harp plucks pinned to arrivals/cards/keys).
+Vocabulary follows S1 (riser/impact/sparkle/whoosh; glass/paper foley; no game bleeps). Real silences at the teaser
+black beat and the night→jar black beat. Pins: declarative table in `src/SfxLayer.tsx`, derived from scene constants.
+Deliveries: with score, and without score (SFX kept) via `--props=props-nobgm.json`.
 
 ## 6. Declared deviations / risks (aesthetic-rules: allowed if recorded)
 
@@ -98,11 +107,11 @@ Two deliveries: with score, and without score (SFX kept) via `--props=props-nobg
 
 ## 7. Audio honesty notes
 
-- All SFX and the score are original numpy synthesis (`tools/make_audio.py`, full SHA-256 in `public/audio/audio-manifest.json`).
-  Freesound could not be reached (HTTP 403 via the sandbox proxy) and the skill forbids silently reusing the old shared
-  library, so this is a **substitution of the sourcing rule, not an equivalent**: synthetic glass/felt/thump imitations, not
-  field recordings. **Nothing was auditioned by ear** — only measured (loudness, peaks, per-segment RMS, SFX-vs-score margin).
-  A human listen pass before posting is recommended; real Freesound SFX can be dropped in later by replacing files in
+- An earlier build used only synthesised audio because Freesound returned HTTP 403 from the sandbox at that time; it was
+  reachable again later and the main SFX were replaced by the CC0 recordings above. The skill's sourcing rule is now
+  followed for those 19 cues; the synthetic ones are declared in §5.
+- **Nothing was auditioned by ear** — selection is by source description, analysis, rating/downloads, and measurements
+  (loudness, peaks, per-segment RMS). A human listen pass before posting is recommended; any file can be swapped in
   `public/audio/sfx/` (names are the pin keys in `src/SfxLayer.tsx`).
-- Mastering after render (ffmpeg, audio only): +3.3 dB gain, limiter at 0.84 (−1.5 dBFS), last 0.4 s fade, trimmed to
-  20.000 s. Result ≈ −14 LUFS integrated, sample peak ≈ −1.5 dBFS. Both deliveries get identical treatment.
+- Mastering after render (ffmpeg, audio only, `tools/master.sh`): +3.3 dB gain, limiter 0.84 (−1.5 dBFS), 0.4 s fade-out,
+  trimmed to 20.000 s. Result ≈ −14 LUFS integrated, sample peak ≈ −1.5 dBFS. Both deliveries get identical treatment.
