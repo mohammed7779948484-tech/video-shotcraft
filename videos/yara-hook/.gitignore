@@ -1,0 +1,5 @@
+node_modules/
+out/*
+!out/review/
+!out/yara-hook.mp4
+!out/yara-hook-nobgm.mp4

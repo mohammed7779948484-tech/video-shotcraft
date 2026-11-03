@@ -1,0 +1,511 @@
+{
+ "generator": "tools/make_audio.py",
+ "license": "Freesound cues: CC0-1.0 per source page (no attribution required; credits kept in public/audio/fs/FREESOUND-CREDITS.md). Synthesised audio: original work of this project.",
+ "note": "Cues listed in freesound_cues are CC0 Freesound recordings (lossy MP3 previews, windowed + normalised by tools/process_freesound.py). The remaining SFX (ticks, key tones, shimmer, breath swell, room air) and the score are original synthesis (tools/make_audio.py). Nothing was auditioned by ear; measured only.",
+ "items": {
+  "thump_soft": {
+   "file": "audio/sfx/thump_soft.wav",
+   "dur_s": 0.35,
+   "sha256": "e3704b810052a5bc0daf3bafe618fb765e43aaf40cecd0603562a3506288be37"
+  },
+  "breath_swell": {
+   "file": "audio/sfx/breath_swell.wav",
+   "dur_s": 0.9,
+   "sha256": "c541d44dad30a85089f85e86b3c39b95b8c76032215d5a7dba15181d1b0ca28f"
+  },
+  "shimmer_up": {
+   "file": "audio/sfx/shimmer_up.wav",
+   "dur_s": 1.3,
+   "sha256": "fea978c1487bfcf739e70328ef237921b0a8dab775768d277f726ba71e7d5225"
+  },
+  "tick_a": {
+   "file": "audio/sfx/tick_a.wav",
+   "dur_s": 0.22,
+   "sha256": "9938c98c9acd1f60adea4ab1d93fdb2baf07f4ad464900c6f2bad1c7cbe8256c"
+  },
+  "tick_b": {
+   "file": "audio/sfx/tick_b.wav",
+   "dur_s": 0.22,
+   "sha256": "8b18748f6f4b8137d455815d8091485fa7362dc03e3233edcacb734d88a09aa9"
+  },
+  "tick_c": {
+   "file": "audio/sfx/tick_c.wav",
+   "dur_s": 0.22,
+   "sha256": "b4788df1e008fa4c3632852a8c3462aae4cbe95be8b5afab3559ee8668b8fded"
+  },
+  "room_air": {
+   "file": "audio/sfx/room_air.wav",
+   "dur_s": 5.0,
+   "sha256": "89bb5cc71043abe30cffc7e133207a40823326d7a074802541067b62b3d4fc9b"
+  },
+  "bgm": {
+   "file": "audio/bgm.wav",
+   "dur_s": 20.0,
+   "sha256": "47b77652afdef1c6e9f2dc9eb755d1556e16f09aaf28bca6362e4639a5f7738b"
+  }
+ },
+ "freesound_cues": {
+  "thump": {
+   "source": "fs:428073",
+   "title": "Sub Drop Smooth.wav",
+   "author": "newagesoup",
+   "page": "https://freesound.org/people/newagesoup/sounds/428073/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "cd886173aa0270c9adbdb04fa14eb7f4cde53bd70506a4bf8d6e14de00e6bfd9",
+   "window_s": [
+    0.43,
+    0.69
+   ],
+   "gain_db": -2.0,
+   "result_peak_dbfs": -0.96,
+   "fade_in_s": 0.002,
+   "fade_out_s": 0.12,
+   "file": "audio/sfx/thump.wav",
+   "sha256": "acd58e74ef36197237b94e52166a51ad1727737c4f86df7a6880fd0bbe36f230",
+   "why": "teaser cut hits: sub drop; window starts 60 ms before its energy peak (0.495 s) and stops before the swell body so hit 3 does not run into the black beat",
+   "auditioned_by_ear": false
+  },
+  "impact_big": {
+   "source": "fs:856174",
+   "title": "Subterranean Deep Sub-Bass Rumble Drop",
+   "author": "brktkrgll",
+   "page": "https://freesound.org/people/brktkrgll/sounds/856174/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "f800694abbc7bbd31aec58b7b950083b5268072366dca77b04d081ccbe8f084f",
+   "window_s": [
+    1.0,
+    3.6
+   ],
+   "gain_db": -3.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.002,
+   "fade_out_s": 0.6,
+   "file": "audio/sfx/impact_big.wav",
+   "sha256": "460947a11e7a9763b84fa929cf4565fb8eb3113305a59a4f58267278d2746fb9",
+   "why": "flash + REVEAL impact: deep sub-bass drop, energy peak 1.035 s",
+   "auditioned_by_ear": false
+  },
+  "tink_a": {
+   "source": "fs:738633",
+   "title": "glasses clinking",
+   "author": "waheegle",
+   "page": "https://freesound.org/people/waheegle/sounds/738633/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "66dae9e73d042c3a49cec962cd51bc574bda8d6acc684a6917e6e7bca44ebf61",
+   "window_s": [
+    0.44,
+    0.99
+   ],
+   "gain_db": -5.2,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.12,
+   "file": "audio/sfx/tink_a.wav",
+   "sha256": "ddfd9db994fd5ec2a0ed195e10bee3409d9414606d2b9e140cb6d792a6b05a99",
+   "why": "glass clink #1 (two drinking glasses), activity 0.47-0.77 s; preview peaks at +1.25 dBFS so it is normalised down",
+   "auditioned_by_ear": false
+  },
+  "tink_b": {
+   "source": "fs:560298",
+   "title": "Glass Clink1.m4a",
+   "author": "RoyalRose",
+   "page": "https://freesound.org/people/RoyalRose/sounds/560298/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "5cf65a117281fcb5c44d9bde625fc4001f61be3559808ed8248353fb3bff2471",
+   "window_s": [
+    0.56,
+    1.26
+   ],
+   "gain_db": 2.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.15,
+   "file": "audio/sfx/tink_b.wav",
+   "sha256": "73cd5e1282366bd82111e8d8a3274532365d68f0f3d889036b9e5bb089ed08d7",
+   "why": "glass clink #2 (different glass, double-sample alternation), energy peak 0.595 s",
+   "auditioned_by_ear": false
+  },
+  "tink_lid": {
+   "source": "fs:262958",
+   "title": "Glass Tap.wav",
+   "author": "Unicornaphobist",
+   "page": "https://freesound.org/people/Unicornaphobist/sounds/262958/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "392752ae436412efb86fff705930284bceca610f82ff901941b336a9627c3248",
+   "window_s": [
+    0.0,
+    0.2
+   ],
+   "gain_db": -0.6,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.0005,
+   "fade_out_s": 0.04,
+   "file": "audio/sfx/tink_lid.wav",
+   "sha256": "9d36215efe4c8a389433964346bc6f78c4d35934b3a9bfb0f804a073aee1bd63",
+   "why": "glass tap, 0.2 s, hero lands / lid note",
+   "auditioned_by_ear": false
+  },
+  "card_whip": {
+   "source": "fs:267950",
+   "title": "whoosh.wav",
+   "author": "anagar",
+   "page": "https://freesound.org/people/anagar/sounds/267950/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "05a007d6e7cfa0355d0aa361f06fb52fd3dec7a160aa189551e7326c9a040eba",
+   "window_s": [
+    0.05,
+    0.29
+   ],
+   "gain_db": 14.1,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.004,
+   "fade_out_s": 0.08,
+   "file": "audio/sfx/card_whip.wav",
+   "sha256": "596ef1f934ddc27fe06723b8b0ed7ba3560fb035f07e8976a26d2739fc41be4f",
+   "why": "short whoosh for a card leaving the glow",
+   "auditioned_by_ear": false
+  },
+  "pat_a": {
+   "source": "fs:120508",
+   "title": "1cards.wav",
+   "author": "bigmac4029",
+   "page": "https://freesound.org/people/bigmac4029/sounds/120508/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "958f35c6db0d0dae235904f439dd6367582a04ae4a173b1f584293d5c2d99176",
+   "window_s": [
+    0.0,
+    0.13
+   ],
+   "gain_db": 9.4,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.0005,
+   "fade_out_s": 0.03,
+   "file": "audio/sfx/pat_a.wav",
+   "sha256": "4b19d379a8f692fab05f5ef44e995ba659627520ea39424077c51143e985883b",
+   "why": "playing-card snap for the landing",
+   "auditioned_by_ear": false
+  },
+  "pat_b": {
+   "source": "fs:784658",
+   "title": "heartbeat sub kick - softer",
+   "author": "music_is_wiggly_air",
+   "page": "https://freesound.org/people/music_is_wiggly_air/sounds/784658/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "995ca4bca0aa564e702180759a05abd4a9c0b1e6a397f78fdd64a45170c0b5d1",
+   "window_s": [
+    0.0,
+    0.25
+   ],
+   "gain_db": 15.2,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.08,
+   "file": "audio/sfx/pat_b.wav",
+   "sha256": "9f1b62826a70a09061561b31cc357203157a4ecd67aba5b285f2e0a42541de03",
+   "why": "soft sub kick (felt body of the card landing); different timbre from pat_a so alternation is real",
+   "auditioned_by_ear": false
+  },
+  "whoosh_air": {
+   "source": "fs:701104",
+   "title": "Whoosh stereo light (transition)",
+   "author": "xkeril",
+   "page": "https://freesound.org/people/xkeril/sounds/701104/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "791bf392615c81ef7b0fd1a92fa39b847241ae0f995669f22573763edbaef07b",
+   "window_s": [
+    0.22,
+    1.27
+   ],
+   "gain_db": 2.7,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.05,
+   "fade_out_s": 0.4,
+   "file": "audio/sfx/whoosh_air.wav",
+   "sha256": "98d75e374018ee1b84095ef749932429ff80d4395208fa33635607c9d16b7a70",
+   "why": "soft air whoosh for pull-back and dissolve (light transition)",
+   "auditioned_by_ear": false
+  },
+  "whoosh_exit": {
+   "source": "fs:701104",
+   "title": "Whoosh stereo light (transition)",
+   "author": "xkeril",
+   "page": "https://freesound.org/people/xkeril/sounds/701104/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "791bf392615c81ef7b0fd1a92fa39b847241ae0f995669f22573763edbaef07b",
+   "window_s": [
+    0.3,
+    1.2
+   ],
+   "gain_db": 2.7,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.04,
+   "fade_out_s": 0.35,
+   "file": "audio/sfx/whoosh_exit.wav",
+   "sha256": "9e1ab27669d8a0a94823bc0b6a6d298e1f7624720a0d3227591fa70cb9b4d9d8",
+   "why": "hero exits through the window",
+   "auditioned_by_ear": false
+  },
+  "whoosh_short": {
+   "source": "fs:267950",
+   "title": "whoosh.wav",
+   "author": "anagar",
+   "page": "https://freesound.org/people/anagar/sounds/267950/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "05a007d6e7cfa0355d0aa361f06fb52fd3dec7a160aa189551e7326c9a040eba",
+   "window_s": [
+    0.0,
+    0.28
+   ],
+   "gain_db": 14.1,
+   "result_peak_dbfs": -2.99,
+   "fade_in_s": 0.004,
+   "fade_out_s": 0.1,
+   "file": "audio/sfx/whoosh_short.wav",
+   "sha256": "be33cab7eac728533c3d76efb250265bdcaaf2ffd835b51a466fe2e8a3329944",
+   "why": "lead-in whoosh before teaser cuts",
+   "auditioned_by_ear": false
+  },
+  "riser_2s": {
+   "source": "fs:685256",
+   "title": "Riser sound effect short.wav",
+   "author": "syntheffects",
+   "page": "https://freesound.org/people/syntheffects/sounds/685256/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "1a48f213348b8b362844c6ba1f87cf30dc69873e16c8cfb58d9211dc2348f726",
+   "window_s": [
+    0.65,
+    3.05
+   ],
+   "gain_db": 6.4,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.3,
+   "fade_out_s": 0.0,
+   "file": "audio/sfx/riser_2s.wav",
+   "sha256": "9ad7302f2a91874e8455cb86b0d89f82477d2298dd80cd47895455e86c7400f2",
+   "why": "riser into the reveal; source ends at its peak (2.745 s) so the end lands on the pin",
+   "auditioned_by_ear": false
+  },
+  "riser_plunge": {
+   "source": "fs:685256",
+   "title": "Riser sound effect short.wav",
+   "author": "syntheffects",
+   "page": "https://freesound.org/people/syntheffects/sounds/685256/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "1a48f213348b8b362844c6ba1f87cf30dc69873e16c8cfb58d9211dc2348f726",
+   "window_s": [
+    2.55,
+    3.05
+   ],
+   "gain_db": 6.4,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.03,
+   "fade_out_s": 0.0,
+   "file": "audio/sfx/riser_plunge.wav",
+   "sha256": "81959d5c34bbd6b9055510a66b6acf72551972377e3a1cb51c63345c0e6daebc",
+   "why": "last 0.5 s of the same riser: plunge into the glass",
+   "auditioned_by_ear": false
+  },
+  "sparkle_tail": {
+   "source": "fs:639429",
+   "title": "Crystal Twinkle",
+   "author": "LaurenPonder",
+   "page": "https://freesound.org/people/LaurenPonder/sounds/639429/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "d806964336b825926e80bfc57f08a794da44daa6e21bb64b24c3faaf1c8b1768",
+   "window_s": [
+    0.15,
+    2.2
+   ],
+   "gain_db": 16.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.002,
+   "fade_out_s": 0.5,
+   "file": "audio/sfx/sparkle_tail.wav",
+   "sha256": "c4dd5d4c78f63967fa1cf746edfe7b74192357e5b939bbcd4c5aa34afc7f0b57",
+   "why": "crystal twinkle after the impact, energy peak 0.195 s",
+   "auditioned_by_ear": false
+  },
+  "bell_birth": {
+   "source": "fs:844398",
+   "title": "Mysterious Sparkle Flourish",
+   "author": "SkySpeira",
+   "page": "https://freesound.org/people/SkySpeira/sounds/844398/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "b9c162464606ee6748b9116e7f0ac246a81ffa30e4312518b55c9c3c1743ac8e",
+   "window_s": [
+    0.2,
+    1.8
+   ],
+   "gain_db": 16.2,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.05,
+   "fade_out_s": 0.4,
+   "file": "audio/sfx/bell_birth.wav",
+   "sha256": "74ef7c2c6eb6a58865828d3e9758c9631270bd4d7e0af65c44db28f0a14108ca",
+   "why": "mysterious sparkle flourish: the firefly condenses",
+   "auditioned_by_ear": false
+  },
+  "bell_hi": {
+   "source": "fs:759840",
+   "title": "ShiningRinging",
+   "author": "NoisyRedFox",
+   "page": "https://freesound.org/people/NoisyRedFox/sounds/759840/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "80426ed4fe6e631b199b9dfd99d3f8ac581f6e16cc19df888259d2ea2ffc61bb",
+   "window_s": [
+    0.0,
+    0.65
+   ],
+   "gain_db": 3.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.002,
+   "fade_out_s": 0.1,
+   "file": "audio/sfx/bell_hi.wav",
+   "sha256": "942f551d3ff849d47caf8bbf35e92315412baf679116dbdd22eb7a7e479a49cb",
+   "why": "shining/ringing little bells: tagline lands",
+   "auditioned_by_ear": false
+  },
+  "heartbeat": {
+   "source": "fs:384662",
+   "title": "Heartbeat.wav",
+   "author": "morganpurkis",
+   "page": "https://freesound.org/people/morganpurkis/sounds/384662/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "5bd666898c8d81a35a543f90b6858f2a2a17b831d67f94bcba0fb0fe458f5e03",
+   "window_s": [
+    0.0,
+    0.47
+   ],
+   "gain_db": 9.0,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.002,
+   "fade_out_s": 0.05,
+   "file": "audio/sfx/heartbeat.wav",
+   "sha256": "583766659c3c53aa58e8215cbae1efa65e53fb057ba54f050376bc2755f6bdef",
+   "why": "lub-dub heartbeat, used twice with falling level",
+   "auditioned_by_ear": false
+  },
+  "crickets": {
+   "source": "fs:424871",
+   "title": "Sound of crickets at night",
+   "author": "joanaseabra",
+   "page": "https://freesound.org/people/joanaseabra/sounds/424871/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "e3f99ae9f33ab30fa1b185761dc04652d91ac5e316ae4808075649672f901a72",
+   "window_s": [
+    1.0,
+    4.0
+   ],
+   "gain_db": 13.8,
+   "result_peak_dbfs": -1.11,
+   "fade_in_s": 0.3,
+   "fade_out_s": 0.4,
+   "file": "audio/sfx/crickets.wav",
+   "sha256": "0bde2975eb9af28eef6683c2de164850630eafdaa1b737aaed1a48988a2e37ae",
+   "why": "night bed under the field (source 11.56 s, 3 s window)",
+   "auditioned_by_ear": false
+  },
+  "key_1": {
+   "source": "fs:560298",
+   "title": "Glass Clink1.m4a",
+   "author": "RoyalRose",
+   "page": "https://freesound.org/people/RoyalRose/sounds/560298/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "5cf65a117281fcb5c44d9bde625fc4001f61be3559808ed8248353fb3bff2471",
+   "window_s": [
+    0.56,
+    1.26
+   ],
+   "gain_db": 2.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.15,
+   "file": "audio/sfx/key_1.wav",
+   "sha256": "73cd5e1282366bd82111e8d8a3274532365d68f0f3d889036b9e5bb089ed08d7",
+   "why": "key fragment 1 of 3: real glass (replaces the synthetic G5 tone; reviewer: rising pitched triad read as a confirmation arpeggio)",
+   "auditioned_by_ear": false
+  },
+  "key_2": {
+   "source": "fs:738633",
+   "title": "glasses clinking",
+   "author": "waheegle",
+   "page": "https://freesound.org/people/waheegle/sounds/738633/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "66dae9e73d042c3a49cec962cd51bc574bda8d6acc684a6917e6e7bca44ebf61",
+   "window_s": [
+    0.44,
+    0.99
+   ],
+   "gain_db": -5.2,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.12,
+   "file": "audio/sfx/key_2.wav",
+   "sha256": "ddfd9db994fd5ec2a0ed195e10bee3409d9414606d2b9e140cb6d792a6b05a99",
+   "why": "key fragment 2 of 3: real glass",
+   "auditioned_by_ear": false
+  },
+  "key_3": {
+   "source": "fs:262958",
+   "title": "Glass Tap.wav",
+   "author": "Unicornaphobist",
+   "page": "https://freesound.org/people/Unicornaphobist/sounds/262958/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "392752ae436412efb86fff705930284bceca610f82ff901941b336a9627c3248",
+   "window_s": [
+    0.0,
+    0.2
+   ],
+   "gain_db": -0.6,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.0005,
+   "fade_out_s": 0.04,
+   "file": "audio/sfx/key_3.wav",
+   "sha256": "9d36215efe4c8a389433964346bc6f78c4d35934b3a9bfb0f804a073aee1bd63",
+   "why": "key fragment 3 of 3: real glass tap",
+   "auditioned_by_ear": false
+  },
+  "wing_flap": {
+   "source": "fs:561009",
+   "title": "Light Wing Flap",
+   "author": "TurboFool",
+   "page": "https://freesound.org/people/TurboFool/sounds/561009/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "3ab87c80e51315eaab884f02c56eb4b9b31e1ce65be557699fd9d5856c4a3ea3",
+   "window_s": [
+    0.2,
+    1.8
+   ],
+   "gain_db": 24.5,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.05,
+   "fade_out_s": 0.25,
+   "file": "audio/sfx/wing_flap.wav",
+   "sha256": "7a50c4998f704c09f5dc8542b0fd9642fbcb8ae5c76cda11976de70ff4867994",
+   "why": "light wing flap foley for the hero flight (source peak is -25 dBFS: +22 dB gain)",
+   "auditioned_by_ear": false
+  }
+ }
+}
