@@ -7,8 +7,9 @@ following the `video-shotcraft` skill (autonomous free-creation mode). Design de
 cd videos/yara-hook
 npm install
 python3 tools/make_audio.py            # regenerates public/audio (deterministic, numpy only)
-npx remotion render src/index.ts YaraHook out/yara-hook.mp4                       # with score
-npx remotion render src/index.ts YaraHook out/yara-hook-nobgm.mp4 --props=props-nobgm.json   # SFX only
+npx remotion render src/index.ts YaraHook out/raw-bgm.mp4                                   # with score
+npx remotion render src/index.ts YaraHook out/raw-nobgm.mp4 --props=props-nobgm.json        # SFX only
+bash tools/master.sh                                                                          # audio mastering -> out/yara-hook.mp4, out/yara-hook-nobgm.mp4
 npx remotion still src/index.ts YaraHook out/qa/frame.png --frame=548             # any frame
 ```
 
