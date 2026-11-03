@@ -22,7 +22,7 @@ Three text directions were considered: (a) *Paper & ink* (warm paper, serif) —
 (b) *Neon tech* (cyan/violet UI) — rejected: generic, game-like; (c) **Midnight & lantern light** — chosen:
 the product's own metaphor *is* light in the dark, so palette, UI and motion all derive from one source.
 
-Tokens (`src/tokens.ts`): night `#050813 → #18264d`, moon `#9db4ff`, **firefly amber `#FFC857`** (light only),
+Tokens (`src/tokens.ts`): night `#050813 → #18264d`, moon `#9db4ff`, **firefly amber `#FFC857`** (light, plus emphasis words and chip outlines),
 hot `#FFE9A8`, deep `#FF9F1C`, paper-ink `#EDE8DE`. Fonts: **Reem Kufi** (wordmark, Kufi geometry),
 **IBM Plex Sans Arabic** (captions + UI). Glass surfaces with 1px hairline, no flat fills.
 
@@ -34,19 +34,20 @@ Motion personality (pipeline §1 two-axis table): energy *low-mid*, tone *wonder
 
 | Shot | Function | Card(s) used | How it was adapted (see §6 for risks) |
 |---|---|---|---|
-| S1 teaser 0–33f | cold open | `trailer-bumper` (`rhythm/trailer-grammar-moves`) | 3×9f hard cuts with 1→1.04 push each, 6f **pure black, silent**; cuts show the 3 most striking future frames (nib bloom / swarm / jar of light). Title card of the card is replaced by the real S2 (no INTRODUCING). |
+| S1 teaser 0–33f | cold open | `trailer-bumper` (`rhythm/trailer-grammar-moves`) | 3×9f hard cuts with 1→1.04 push each, 6f **pure black, silent**; cuts show the 3 most striking future frames (the firefly condensing at the pen nib / the swarm / the jar of light). Title card of the card is replaced by the real S2 (no INTRODUCING). |
 | S2 desk 33–165f | idea is born (single hero, full arc ≥3s) | (hero arc grammar of `spotlight-hero-card`, Q5; no card geometry reused) | New scene. Gather → bloom → condense → lift → hover → exit; camera push then tilt-up. |
 | S3 night 165–255f | problem: ideas are lost | `depth-layer-moves` (far/mid/near parallax rates), `tension-camera-moves` pull-back intent | Depth rates reimplemented with zoom exponents `z^(0.55+0.75d)`; pull-back from hero to wide field; field dies in a decelerating wave. |
 | S4 jar 255–345f | speak → captured | `voice-waveform-live` (pill, 64→40 bars, speak/pause envelope, per-word transcript), `glow-flyline-moves` C `orb-flyline-relay` (resonance frame) | Warm-sand look → midnight/amber; arrivals are the SHARED frame of glow surge + ripple + glass tink + harp note. |
 | S5 cards 345–441f | auto-organised notes | `deck-deal-flyin` (cue spacing, dive/settle ease, press), `row-embed` (amber seam on landing) | 5 notes dealt with intervals 9→7.5→6→4.5f from the jar's glow into real feed slots (Q9); 0.5s+ rest before caption. |
-| S6 name 441–600f | brand reveal (signature motion) | **`stroke-segment-build`** (suspense reveal) + `glow-flyline` trail grammar | Neon tubes → firefly-lit fragments masked into the Kufi glyphs (see §3). |
+| S6 name 441–600f | brand reveal (signature motion) | **`stroke-segment-build`** (suspense reveal) + `glow-flyline` (flyline-arc) head-bright fading trail (`Trail` in `lib/fx.tsx`) | Neon tubes → firefly-lit fragments masked into the Kufi glyphs (see §3). |
 | Captions | all | `blur-slide` (y, blur, opacity share ONE progress + ONE ease-out) | RTL: first word lands on the right. |
 
 ## 3. Signature motion: «النور يكتب» (light writes)
 
 16 soft elliptical fragments are masked into the letterforms of «يراع»; each is ignited by a firefly that
-flies out of a note card. Parameters kept from `stroke-segment-build`: ease-out spacing 9f→3f across 13
-fragments (`FIRST=16, SPAN=56`), 7f strike "on–off–on–half–on" settling to **0.58**, 14f breath,
+flies out of a note card. Parameters kept from `stroke-segment-build`: spacing shrinking **7f→2.5f** across 13
+fragments (`FIRST=14`; the card text says 9f→3f but the demo's own `EASE.out` maths gives ≈20f→0f, with the last five
+fragments on the same frame — a source conflict; a linear shrink was chosen so every ignition and its tick stays distinct), 7f strike "on–off–on–half–on" settling to **0.58**, 14f breath,
 three key fragments on a 7f/6f beat (the two dots of ي + the head of ع — the identity features, held
 back), reveal 0.58→1→1.25→1, room lights with lit-count (physical: more fragments, brighter room),
 **hold ≥ 1 s** (R1). Fragments are shrunk (×0.74) so the word is *not* readable for >60 % of the build.
@@ -60,7 +61,7 @@ back), reveal 0.58→1→1.25→1, room lights with lit-count (physical: more fr
 | 2 | 33 | 132 | desk / birth | gather→bloom→condense→hover→exit | «أفكارك يراعات.» |
 | 3 | 165 | 90 | night field | pull-back, field extinguishes, hero heartbeat fails, 6f black | «تلمع لحظة… ثم تضيع.» |
 | 4 | 255 | 90 | jar | voice pill, 10+1 arrivals, plunge into glass → amber flash | «قُلها فقط.» + live transcript |
-| 5 | 345 | 96 | app | 5 cards dealt w/ hard accel, 0.5s rest | «تكلّم… ويراع يرتّبها.» |
+| 5 | 345 | 96 | app | 5 cards dealt w/ hard accel; board static ≥1.3 s after the last landing (local f55→96) | «تكلّم… ويراع يرتّبها.» (starts f44, dissolves with the UI in shot 6) |
 | 6 | 441 | 159 | name | dissolve → fragments → keys @86/93/99 → reveal @105 → hold 54f | «امسك الفكرة قبل أن تطير.» + «قريبًا · YARA'» |
 
 ## 5. Sound
@@ -84,6 +85,24 @@ Two deliveries: with score, and without score (SFX kept) via `--props=props-nobg
   native Arabic typography, real note density.
 - **Card adaptations** change the *material* (neon→light) of `stroke-segment-build`; its own known-pitfall
   list says ignition and half-lit values must be retuned — they were re-checked on stills.
-- Captions: 74–78 px (≥ 5.2 % of 1920 height is 100 px for the *frame height*; on a 1080-wide phone the
-  effective rule "≥56 px at 1080p" is met). Auxiliary text ≥ 34 px.
+- Captions: 78 px (76 px for the closing tagline), measured ink height 72–105 px. The literal Q11 wording (≥5.2 % of
+  frame height) comes from 1080p landscape; here the absolute minimum (≥56 px captions, ≥32 px auxiliary) is met on a
+  1080-wide frame and the ambiguity is declared. Auxiliary text ≥ 34 px (tag chips 34 px).
+- **S1 (sound)**: the score is a calm pad + harp, not a strong-beat electronic bed — there is no user-chosen BGM and the
+  tone is wonder/care. Declared deviation. No audio was auditioned by ear (see below).
+- **Pull-back-isolation pitfall**: night fireflies go out in a deterministic shuffled order (random-order extinguish can
+  read as a glitch); the wave is density-eased and the hero's heartbeat is driven from the same frames as its sound.
+- Cards/name: the name «يراع» is spoken in the cards caption (so the product is introduced), but the header mark was
+  removed so the big wordmark reveal stays fresh.
 - Not delivered: the workbench manifest (`src/workbench.ts`) and Jianying export (not requested).
+
+## 7. Audio honesty notes
+
+- All SFX and the score are original numpy synthesis (`tools/make_audio.py`, full SHA-256 in `public/audio/audio-manifest.json`).
+  Freesound could not be reached (HTTP 403 via the sandbox proxy) and the skill forbids silently reusing the old shared
+  library, so this is a **substitution of the sourcing rule, not an equivalent**: synthetic glass/felt/thump imitations, not
+  field recordings. **Nothing was auditioned by ear** — only measured (loudness, peaks, per-segment RMS, SFX-vs-score margin).
+  A human listen pass before posting is recommended; real Freesound SFX can be dropped in later by replacing files in
+  `public/audio/sfx/` (names are the pin keys in `src/SfxLayer.tsx`).
+- Mastering after render (ffmpeg, audio only): +3.3 dB gain, limiter at 0.84 (−1.5 dBFS), last 0.4 s fade, trimmed to
+  20.000 s. Result ≈ −14 LUFS integrated, sample peak ≈ −1.5 dBFS. Both deliveries get identical treatment.

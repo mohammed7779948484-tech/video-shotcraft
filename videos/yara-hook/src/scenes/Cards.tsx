@@ -11,6 +11,7 @@ import { Glow, Mote } from '../lib/fx';
 export const CARDS_DUR = 96;
 
 export const ar = (n: number) => String(n).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[+d]);
+export const countLabel = (n: number) => (n === 0 ? 'لا أفكار محفوظة بعد' : n === 1 ? 'فكرة واحدة محفوظة' : n === 2 ? 'فكرتان محفوظتان' : `${ar(n)} أفكار محفوظة`);
 
 export const SLOT_Y0 = 270;
 export const CARD_H = 204;
@@ -73,7 +74,7 @@ const Card: React.FC<{ f: number; k: number }> = ({ f, k }) => {
         <div style={{ position: 'absolute', right: 34, top: 44, width: 22, height: 22, borderRadius: '50%', background: C.amberHot, boxShadow: `0 0 ${14 + 30 * lit}px ${rgba(C.amber, 0.5 + 0.5 * lit)}, 0 0 ${40 * lit}px ${rgba(C.amber, 0.6 * lit)}` }} />
         <div style={{ position: 'absolute', right: 74, top: 20, fontSize: 56, fontWeight: 700, color: C.ink, lineHeight: 1.3, whiteSpace: 'nowrap' }}>{n.t}</div>
         <div style={{ position: 'absolute', right: 74, top: 104, fontSize: 38, fontWeight: 400, color: C.ink2, lineHeight: 1.4, whiteSpace: 'nowrap' }}>{n.s}</div>
-        <div style={{ position: 'absolute', left: 30, top: 30, height: 50, padding: '0 24px', borderRadius: 25, display: 'flex', alignItems: 'center', fontSize: 30, fontWeight: 500, color: C.amber, boxShadow: `inset 0 0 0 1.5px ${rgba(C.amber, 0.5)}`, background: rgba(C.amber, 0.08) }}>{n.tag}</div>
+        <div style={{ position: 'absolute', left: 30, top: 30, height: 54, padding: '0 26px', borderRadius: 27, display: 'flex', alignItems: 'center', fontSize: 34, fontWeight: 500, color: C.amber, boxShadow: `inset 0 0 0 1.5px ${rgba(C.amber, 0.5)}`, background: rgba(C.amber, 0.08) }}>{n.tag}</div>
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 4, background: `linear-gradient(90deg, ${rgba(C.amber, 0)}, ${rgba(C.amber, 0.95 * seam)}, ${rgba(C.amber, 0)})` }} />
       </div>
     </>
@@ -91,10 +92,10 @@ export const AppUI: React.FC<{ f: number; dissolve?: number }> = ({ f, dissolve 
         {/* header */}
         <div style={{ position: 'absolute', right: 80, top: 132, direction: 'rtl', opacity: inT, transform: `translateY(${(1 - inT) * -20}px)` }}>
           <div style={{ fontSize: 68, fontWeight: 700, color: C.ink, lineHeight: 1.15 }}>أفكاري</div>
-          <div style={{ fontSize: 34, color: C.ink2, marginTop: 2 }}>{ar(landedN)} أفكار محفوظة الليلة</div>
+          <div style={{ fontSize: 34, color: C.ink2, marginTop: 2 }}>{countLabel(landedN)}</div>
         </div>
         <div style={{ position: 'absolute', left: 80, top: 140, display: 'flex', alignItems: 'center', gap: 14, opacity: inT }}>
-          <div style={{ fontFamily: FONT.brand, fontSize: 62, fontWeight: 700, color: C.amber, textShadow: `0 0 26px ${rgba(C.amber, 0.45)}`, lineHeight: 1 }}>يراع</div>
+          <div style={{ width: 30, height: 30, borderRadius: '50%', background: C.amberHot, boxShadow: `0 0 22px ${rgba(C.amber, 0.9)}, 0 0 60px ${rgba(C.amber, 0.45)}` }} />
         </div>
         {NOTES.map((_, k) => <Card key={k} f={f} k={k} />)}
       </div>

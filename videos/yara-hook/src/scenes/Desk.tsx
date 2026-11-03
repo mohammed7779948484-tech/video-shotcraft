@@ -138,15 +138,11 @@ export const Desk: React.FC<{ f: number }> = ({ f }) => {
         {/* dust floating in the moonlight */}
         {Array.from({ length: 22 }, (_, i) => {
           const r = mulberry32(i * 17 + 3);
-          const x = 480 + r() * 520 + Math.sin(f * 0.02 + i) * 24, y = 700 + r() * 800 + ((f * (0.25 + r() * 0.4)) % 60) * -1;
-          return <Mote key={`d${i}`} x={x} y={y} r={1.6 + r() * 1.6} a={0.25 + 0.2 * Math.sin(f * 0.07 + i)} color={C.moon} halo={3} />;
+          const cyc = (f * (0.25 + r() * 0.4) + i * 7) % 60;
+          const x = 480 + r() * 520 + Math.sin(f * 0.02 + i) * 24, y = 700 + r() * 800 - cyc;
+          return <Mote key={`d${i}`} x={x} y={y} r={1.6 + r() * 1.6} a={(0.25 + 0.2 * Math.sin(f * 0.07 + i)) * Math.sin((Math.PI * cyc) / 60)} color={C.moon} halo={3} />;
         })}
       </div>
-      {/* out-of-focus foreground leaf: depth + parallax against the camera push */}
-      <svg width={420} height={620} style={{ position: 'absolute', left: -60 - (cam.z - 1) * 120, bottom: -90, filter: 'blur(14px)', opacity: 0.9 * (1 - ramp(f, 96, 20, EASE.swift)), transform: `rotate(${Math.sin(f * 0.03) * 1.2}deg)`, transformOrigin: '30% 100%' }}>
-        <path d="M60 620 C 40 420 90 240 200 110 C 230 260 260 420 200 620 Z" fill="#05070f" />
-        <path d="M60 620 C 40 420 90 240 200 110" stroke="rgba(157,180,255,0.5)" strokeWidth={4} fill="none" />
-      </svg>
     </div>
   );
 };

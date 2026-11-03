@@ -76,7 +76,7 @@ export const Promo: React.FC<{ bgm?: boolean }> = ({ bgm = true }) => {
     body = (
       <>
         <AppUI f={cards} />
-        <Caption text="تكلّم… ويراع يرتّبها." f={cards} start={62} y={1470} size={78} accent={[1]} scrim={false} />
+        <Caption text="تكلّم… ويراع يرتّبها." f={cards} start={44} y={1470} size={78} accent={[1]} scrim={false} />
         <AbsoluteFill style={{ background: `radial-gradient(circle at 50% 50%, #fff3cf 0%, ${C.amber} 60%, ${C.amberDeep} 100%)`, opacity: flash }} />
       </>
     );

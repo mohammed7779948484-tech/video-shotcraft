@@ -5,7 +5,7 @@
 import React from 'react';
 import { C, FONT } from '../tokens';
 import { EASE, bez3, mix, ramp, rgba, mulberry32, noise1, Pt } from '../lib/anim';
-import { FireflyBug, Glow, Mote } from '../lib/fx';
+import { FireflyBug, Glow, Mote, Trail } from '../lib/fx';
 
 export const JAR_DUR = 90;
 export const JAR_C: Pt = { x: 540, y: 850 };
@@ -23,8 +23,8 @@ const rest = (() => {
   return Array.from({ length: ARRIVALS.length + 1 }, () => ({ x: -130 + r() * 260, y: -60 + r() * 250, ph: r() * 6.28 }));
 })();
 const starts = [
-  { x: -120, y: 520 }, { x: 1200, y: 700 }, { x: -80, y: 1180 }, { x: 1180, y: 1300 }, { x: 160, y: 300 },
-  { x: 940, y: 240 }, { x: -140, y: 860 }, { x: 1220, y: 980 }, { x: 420, y: 1500 }, { x: 760, y: 1520 }, { x: 540, y: 200 },
+  { x: -120, y: 520 }, { x: 1200, y: 700 }, { x: -80, y: 1180 }, { x: 1180, y: 1300 }, { x: 160, y: 600 },
+  { x: 940, y: 560 }, { x: -140, y: 860 }, { x: 1220, y: 980 }, { x: 420, y: 1500 }, { x: 760, y: 1520 }, { x: 1190, y: 1000 },
 ];
 
 const surge = (f: number, at: number) => (f < at ? 0 : f <= at + 5 ? ramp(f, at, 5, EASE.out) : 1 - ramp(f, at + 5, 15, EASE.swift));
@@ -111,9 +111,7 @@ export const Jar: React.FC<{ f: number }> = ({ f }) => {
             <React.Fragment key={i}>
               {out > 0 && (
                 <>
-                  <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
-                    <polyline points={trail.map((q) => `${q.x.toFixed(1)},${q.y.toFixed(1)}`).join(' ')} fill="none" stroke={rgba(C.amberHot, 0.5 * out)} strokeWidth={isHero ? 8 : 4} strokeLinecap="round" />
-                  </svg>
+                  <Trail pts={trail} w={isHero ? 7 : 4} a={out} />
                   {isHero ? (
                     <FireflyBug x={p.x} y={p.y} s={1.15} rot={ang} f={f} lit={1} flap={1.9} opacity={out} />
                   ) : (

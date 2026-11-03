@@ -7,6 +7,7 @@ import { EASE, mix, ramp, mulberry32, noise1 } from '../lib/anim';
 import { FireflyBug, Glow, Mote } from '../lib/fx';
 
 export const NIGHT_DUR = 90;
+export const HEART_AT = [62, 74]; // local frames of the hero's two failing heartbeats (picture + sound)
 
 export const nightZoom = (f: number) => mix(2.6, 1.0, ramp(f, 0, 58, EASE.smooth)) * (1 + 0.07 * ramp(f, 58, 32, EASE.smooth));
 
@@ -41,8 +42,9 @@ export const Night: React.FC<{ f: number }> = ({ f }) => {
   const hp = place(hx, hy, heroD);
   // the hero dims late: strong, then a failing heartbeat
   const fade = ramp(f, 60, 26, EASE.smooth);
-  const beat = 0.5 + 0.5 * Math.sin(f * 0.33);
-  const heroLit = (1 - 0.8 * fade) * (0.8 + 0.2 * beat * (0.4 + fade));
+  // heartbeat visuals are driven by the SAME frames the sound is pinned to (HEART_AT)
+  const pulse = HEART_AT.reduce((acc, b, i) => acc + (f < b ? 0 : Math.exp(-(f - b) / 5) * (i === 0 ? 1 : 0.7)), 0);
+  const heroLit = (1 - 0.8 * fade) * (0.74 + 0.3 * Math.min(1.2, pulse) + 0.06 * Math.sin(f * 0.11));
   const heroS = 1.05 * sc(heroD) * 0.95;
 
   return (

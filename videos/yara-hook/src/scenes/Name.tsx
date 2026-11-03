@@ -7,12 +7,13 @@
 // Kufi letterforms; each fragment is delivered by a firefly flying out of a note card (dissolve).
 import React from 'react';
 import { C, FONT } from '../tokens';
-import { EASE, bez3, mix, ramp, rgba, stagger, mulberry32, Pt } from '../lib/anim';
-import { Glow, Mote, Caption } from '../lib/fx';
+import { EASE, bez3, mix, ramp, rgba, Pt } from '../lib/anim';
+import { Glow, Mote, Caption, Trail } from '../lib/fx';
 import { AppUI, CARD_H, slotY } from './Cards';
 
 export const NAME_DUR = 159;
 const DY = -72; // word block lifted so the lock-up is optically centred
+const PAD = 340; // the masked box is padded so blur/bloom is never clipped by the mask box (review: hard glow edge on reveal)
 const WORD = { x: 540, y: 818 };
 
 type Patch = { cx: number; cy: number; rx: number; ry: number };
@@ -36,11 +37,11 @@ const P: Patch[] = [
 ];
 // scrambled: front 13 jump across letters, keys last (identity fragments held back)
 export const ORDER = [8, 2, 5, 0, 11, 7, 3, 10, 4, 6, 1, 9, 12, 15, 13, 14];
-export const FIRST = 16, SPAN = 56;
+export const FIRST = 14, SPAN = 57; // spacing shrinks 7f -> 2.5f (card text says 9f->3f; the demo's own easing is ~20f->0f; see DESIGN)
 export const KEY_AT = [86, 93, 99];
 const STRIKE = 7;
 export const REVEAL = 105;
-export const startOf = (rank: number) => (rank < 13 ? FIRST + stagger(rank, 13, SPAN, EASE.out) : KEY_AT[rank - 13]);
+export const startOf = (rank: number) => (rank < 13 ? FIRST + Array.from({ length: rank }, (_, j) => 7 - j * (4.5 / 11)).reduce((a, b) => a + b, 0) : KEY_AT[rank - 13]);
 const strike = (f: number, s: number) =>
   f < s ? 0 : f >= s + STRIKE ? 0.58 : [0, 1, 0.12, 0.95, 0.4, 1, 0.58].reduce((acc, _, i, a) => acc, 0) || interpolate7(f - s);
 function interpolate7(t: number) {
@@ -51,8 +52,8 @@ function interpolate7(t: number) {
 const hum = (f: number, i: number) => 1 + 0.035 * Math.sin(f * 0.9 + i * 2.3) * Math.sin(f * 0.37 + i);
 
 const wordStyle: React.CSSProperties = {
-  position: 'absolute', left: 0, right: 0, top: 560 + DY, textAlign: 'center', direction: 'rtl',
-  fontFamily: FONT.brand, fontWeight: 700, fontSize: 600, lineHeight: 1, whiteSpace: 'nowrap', height: 1000,
+  position: 'absolute', left: 0, right: 0, top: 560 + DY - PAD, paddingTop: PAD, boxSizing: 'border-box', textAlign: 'center', direction: 'rtl',
+  fontFamily: FONT.brand, fontWeight: 700, fontSize: 600, lineHeight: 1, whiteSpace: 'nowrap', height: 1000 + 2 * PAD,
 };
 
 const sources: Pt[] = Array.from({ length: 5 }, (_, k) => ({ x: 540, y: slotY(k) + CARD_H / 2 }));
@@ -72,7 +73,7 @@ export const Name: React.FC<{ f: number }> = ({ f }) => {
 
   const SHRINK = 0.74; // fragments stay small: >60% of the time the word must NOT be readable
   const maskLayers = P.map((p, i) => ({ p: { ...p, rx: p.rx * SHRINK, ry: p.ry * SHRINK }, l: Math.min(1, levels[i]) })).filter((x) => x.l > 0.01)
-    .map(({ p, l }) => `radial-gradient(ellipse ${p.rx}px ${p.ry}px at ${p.cx}px ${p.cy - 560}px, rgba(0,0,0,${l.toFixed(3)}) 0%, rgba(0,0,0,${l.toFixed(3)}) 52%, rgba(0,0,0,0) 100%)`);
+    .map(({ p, l }) => `radial-gradient(ellipse ${p.rx}px ${p.ry}px at ${p.cx}px ${p.cy - 560 + PAD}px, rgba(0,0,0,${l.toFixed(3)}) 0%, rgba(0,0,0,${l.toFixed(3)}) 52%, rgba(0,0,0,0) 100%)`);
   if (reveal > 0) maskLayers.push(`linear-gradient(rgba(0,0,0,${reveal.toFixed(3)}), rgba(0,0,0,${reveal.toFixed(3)}))`);
   const mask = maskLayers.length ? maskLayers.join(',') : 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0))';
   const maskStyle: React.CSSProperties = full ? {} : { WebkitMaskImage: mask, maskImage: mask, WebkitMaskSize: '1080px 1920px', maskSize: '1080px 1920px', WebkitMaskRepeat: 'no-repeat', maskRepeat: 'no-repeat' };
@@ -102,9 +103,7 @@ export const Name: React.FC<{ f: number }> = ({ f }) => {
       <React.Fragment key={i}>
         {out > 0.01 && (
           <>
-            <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, overflow: 'visible' }}>
-              <polyline points={trail.map((q) => `${q.x.toFixed(1)},${q.y.toFixed(1)}`).join(' ')} fill="none" stroke={rgba(C.amberHot, 0.55 * out)} strokeWidth={key ? 8 : 5} strokeLinecap="round" />
-            </svg>
+            <Trail pts={trail} w={key ? 6 : 4} a={out} />
             <Mote x={pos.x} y={pos.y} r={key ? 10 : 7} a={out} halo={6} />
           </>
         )}
@@ -122,7 +121,7 @@ export const Name: React.FC<{ f: number }> = ({ f }) => {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: C.night0 }}>
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, #070b1a 0%, #090f24 55%, #0a1230 100%)' }} />
       {/* the app dissolving into fireflies */}
-      {dissolve < 1 && <div style={{ position: 'absolute', inset: 0, opacity: 1 }}><AppUI f={96} dissolve={dissolve} /></div>}
+      {dissolve < 1 && <div style={{ position: 'absolute', inset: 0, opacity: 1 }}><AppUI f={96} dissolve={dissolve} /><Caption text="تكلّم… ويراع يرتّبها." f={96 + f} start={44} y={1470} size={78} accent={[1]} scrim={false} out={96} /></div>}
       <div style={{ position: 'absolute', inset: 0, transform: `scale(${push})`, transformOrigin: `540px ${WORD.y}px` }}>
         {/* the room fills with the light of the word */}
         <Glow x={WORD.x} y={WORD.y + 40} r={760} color={C.amber} a={Math.min(1, ambient) * 0.5} sx={1.1} />

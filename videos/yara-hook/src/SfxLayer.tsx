@@ -6,10 +6,10 @@ import { Audio, Sequence, staticFile, interpolate } from 'remotion';
 import { SHOTS, TOTAL } from './timeline';
 import { ARRIVALS, HERO_ARRIVAL } from './scenes/Jar';
 import { CUES } from './scenes/Cards';
-import { FLIES } from './scenes/Night';
+import { FLIES, HEART_AT } from './scenes/Night';
 import { ORDER, KEY_AT, REVEAL, startOf } from './scenes/Name';
 
-// Output-track lag of the render pipeline (AAC priming), in frames. Measured, see README.
+// Output-track lag of the render pipeline (AAC priming), in frames. Measured, see README ("Audio sync record").
 export const OUTPUT_LAG_F = 1.3;
 
 type Cue = { from: number; src: string; volume: number; dur?: number; note: string; fadeIn?: number; fadeOut?: number };
@@ -35,9 +35,9 @@ add({ from: S.desk.from + 98, src: 'whoosh_exit', volume: 0.4, dur: 34, note: 'h
 // --- night: pull-back, the field goes out, hero alone
 add({ from: S.night.from, src: 'whoosh_air', volume: 0.3, dur: 40, note: 'pull-back from the hero to the wide field' });
 add({ from: S.night.from, src: 'crickets', volume: 0.18, dur: 84, fadeIn: 10, fadeOut: 10, note: 'night bed' });
-[...FLIES].map((a) => a.die).sort((a, b) => a - b).filter((_, i) => i % 7 === 3).forEach((d, i) => add({ from: S.night.from + Math.round(d), src: 'tick_c', volume: 0.09 - i * 0.004, dur: 6, note: 'a firefly goes out' }));
-add({ from: S.night.from + 60, src: 'heartbeat', volume: 0.38, dur: 22, fadeOut: 4, note: 'hero heartbeat 1' });
-add({ from: S.night.from + 72, src: 'heartbeat', volume: 0.26, dur: 11, fadeOut: 5, note: 'hero heartbeat 2 (failing); must die before the black beat at night+84' });
+[...FLIES].map((a) => a.die).sort((a, b) => a - b).filter((_, i) => i % 7 === 3).forEach((d, i) => add({ from: S.night.from + Math.round(d), src: 'tick_c', volume: 0.30 - i * 0.012, dur: 6, note: 'a firefly goes out (audible over the score: -11..-15 dB margin before fix)' }));
+add({ from: S.night.from + HEART_AT[0], src: 'heartbeat', volume: 0.62, dur: 18, fadeOut: 4, note: 'hero heartbeat 1 (pinned to the picture pulse)' });
+add({ from: S.night.from + HEART_AT[1], src: 'heartbeat', volume: 0.5, dur: 9, fadeOut: 4, note: 'hero heartbeat 2 (failing); dies before the black beat at night+84' });
 
 // --- jar: voice wakes the field; every arrival = tink on the same frame as the glow surge
 add({ from: S.jar.from + 4, src: 'breath_swell', volume: 0.28, dur: 28, note: 'voice pill appears' });
@@ -58,8 +58,8 @@ ORDER.slice(0, 13).forEach((_, rank) => add({ from: S.name.from + Math.round(sta
 KEY_AT.forEach((k, i) => add({ from: S.name.from + k, src: `key_${i + 1}`, volume: 0.5, dur: 27, note: `key fragment ${i + 1} of 3` }));
 add({ from: S.name.from + REVEAL - 72, src: 'riser_2s', volume: 0.5, dur: 72, fadeOut: 3, note: 'riser into the reveal' });
 add({ from: S.name.from + REVEAL, src: 'impact_big', volume: 0.8, dur: 78, fadeOut: 20, note: 'REVEAL: the name is readable' });
-add({ from: S.name.from + REVEAL + 2, src: 'sparkle_tail', volume: 0.42, dur: 66, fadeOut: 20, note: 'sparkle after the impact' });
-add({ from: S.name.from + REVEAL + 22, src: 'bell_hi', volume: 0.28, dur: 42, fadeOut: 14, note: 'tagline lands' });
+add({ from: S.name.from + REVEAL + 2, src: 'sparkle_tail', volume: 0.42, dur: 50, fadeOut: 22, note: 'sparkle after the impact' });
+add({ from: S.name.from + REVEAL + 22, src: 'bell_hi', volume: 0.28, dur: 30, fadeOut: 14, note: 'tagline lands' });
 
 export const SfxLayer: React.FC<{ bgm: boolean }> = ({ bgm }) => (
   <>

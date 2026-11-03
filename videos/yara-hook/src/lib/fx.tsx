@@ -1,7 +1,7 @@
 import React from 'react';
 import { staticFile } from 'remotion';
 import { C, FONT } from '../tokens';
-import { EASE, ramp, rgba } from './anim';
+import { EASE, ramp, rgba, Pt } from './anim';
 
 /** soft radial light. mix-blend screen so overlapping lights add like real light. */
 export const Glow: React.FC<{ x: number; y: number; r: number; color?: string; a?: number; sx?: number }> = ({
@@ -130,5 +130,24 @@ export const Caption: React.FC<{
         })}
       </div>
     </div>
+  );
+};
+
+/** Head-bright comet trail: segments fade and thin out away from the head (pts[0] = head). */
+export const Trail: React.FC<{ pts: Pt[]; w?: number; color?: string; a?: number }> = ({ pts, w = 5, color = C.amberHot, a = 1 }) => {
+  const n = pts.length;
+  return (
+    <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, overflow: 'visible', pointerEvents: 'none' }}>
+      {pts.slice(0, -1).map((p, i) => {
+        const k = 1 - i / (n - 1);
+        const q = pts[i + 1];
+        return (
+          <g key={i}>
+            <line x1={p.x} y1={p.y} x2={q.x} y2={q.y} stroke={rgba(C.amber, 0.22 * k * k * a)} strokeWidth={w * (1 + 2.6 * k)} strokeLinecap="round" />
+            <line x1={p.x} y1={p.y} x2={q.x} y2={q.y} stroke={rgba(color, 0.95 * k * k * a)} strokeWidth={Math.max(0.8, w * (0.35 + 0.65 * k))} strokeLinecap="round" />
+          </g>
+        );
+      })}
+    </svg>
   );
 };
