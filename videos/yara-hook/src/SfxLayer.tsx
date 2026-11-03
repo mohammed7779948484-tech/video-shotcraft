@@ -35,7 +35,7 @@ add({ from: S.desk.from + 98, src: 'whoosh_exit', volume: 0.4, dur: 34, note: 'h
 
 // --- night: pull-back, the field goes out, hero alone
 add({ from: S.night.from, src: 'whoosh_air', volume: 0.3, dur: 40, note: 'pull-back from the hero to the wide field' });
-add({ from: S.night.from, src: 'crickets', volume: 0.18, dur: 84, fadeIn: 10, fadeOut: 10, note: 'night bed' });
+add({ from: S.night.from, src: 'crickets', volume: 0.30, dur: 84, fadeIn: 10, fadeOut: 10, note: 'night bed' });
 [...FLIES].map((a) => a.die).sort((a, b) => a - b).filter((_, i) => i % 7 === 3).forEach((d, i) => add({ from: S.night.from + Math.round(d), src: 'tick_c', volume: 0.30 - i * 0.012, dur: 6, note: 'a firefly goes out (audible over the score: -11..-15 dB margin before fix)' }));
 add({ from: S.night.from + HEART_AT[0], src: 'heartbeat', volume: 0.42, dur: 18, fadeOut: 4, note: 'hero heartbeat 1 (pinned to the picture pulse)' });
 add({ from: S.night.from + HEART_AT[1], src: 'heartbeat', volume: 0.34, dur: 9, fadeOut: 4, note: 'hero heartbeat 2 (failing); dies before the black beat at night+84' });
@@ -46,7 +46,7 @@ ARRIVALS.forEach((a, i) => add({ from: S.jar.from + a - 1, src: alt(i, 'tink_a',
 add({ from: S.jar.from + HERO_ARRIVAL - 26, src: 'wing_flap', volume: 0.16, dur: 30, fadeIn: 4, fadeOut: 10, note: 'hero flies in from the right (real foley)' });
 add({ from: S.jar.from + HERO_ARRIVAL, src: 'tink_lid', volume: 0.62, dur: 22, note: 'hero lands: lid note, jar full' });
 add({ from: S.jar.from + 75, src: 'riser_plunge', volume: 0.5, dur: 15, note: 'plunge into the glass' });
-add({ from: S.cards.from, src: 'impact_big', volume: 0.22, dur: 40, fadeOut: 12, note: 'amber flash: the jar becomes the app' });
+add({ from: S.cards.from - 1, src: 'impact_big', volume: 0.22, dur: 40, fadeOut: 12, note: 'amber flash: the jar becomes the app' });
 
 // --- cards: hard-accelerating deal, whip on flight, pat on landing
 CUES.forEach((c, i) => {
@@ -59,7 +59,7 @@ add({ from: S.name.from, src: 'whoosh_air', volume: 0.3, dur: 30, note: 'app dis
 ORDER.slice(0, 13).forEach((_, rank) => add({ from: S.name.from + Math.round(startOf(rank)), src: ['tick_a', 'tick_b', 'tick_c'][rank % 3], volume: 0.3 - rank * 0.01, dur: 7, note: `fragment ${rank + 1} ignites` }));
 KEY_AT.forEach((k, i) => add({ from: S.name.from + k, src: `key_${i + 1}`, volume: 0.5, dur: 27, note: `key fragment ${i + 1} of 3` }));
 add({ from: S.name.from + REVEAL - 72, src: 'riser_2s', volume: 0.4, dur: 72, fadeOut: 3, note: 'riser into the reveal' });
-add({ from: S.name.from + REVEAL - 2, src: 'impact_big', volume: 0.66, dur: 78, fadeOut: 20, note: 'REVEAL: the name is readable (pinned 2f early: the sub-drop body peaks ~3f after its attack, measured)' });
+add({ from: S.name.from + REVEAL - 1, src: 'impact_big', volume: 0.66, dur: 78, fadeOut: 20, note: 'REVEAL: the name is readable (pinned 1f early; cross-correlation measured −1.06 f when pinned 2f early)' });
 add({ from: S.name.from + REVEAL + 2, src: 'sparkle_tail', volume: 0.38, dur: 50, fadeOut: 22, note: 'sparkle after the impact' });
 add({ from: S.name.from + REVEAL + 22, src: 'bell_hi', volume: 0.28, dur: 30, fadeOut: 14, note: 'tagline lands' });
 

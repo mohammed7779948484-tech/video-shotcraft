@@ -22,7 +22,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:22.742510+00:00",
       "license_checked_at": "2026-11-03T04:02:22.742523+00:00",
-      "changes": [],
+      "changes": [
+        "tink_a: window 0.44-0.99 s, gain -5.2 dB (float decode, peak-normalised to 0.9), fade-in 0.001 s / out 0.12 s -> audio/sfx/tink_a.wav (sha256 ddfd9db994fd)",
+        "key_2: window 0.44-0.99 s, gain -5.2 dB (float decode, peak-normalised to 0.9), fade-in 0.001 s / out 0.12 s -> audio/sfx/key_2.wav (sha256 ddfd9db994fd)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -58,7 +61,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:23.019218+00:00",
       "license_checked_at": "2026-11-03T04:02:23.019234+00:00",
-      "changes": [],
+      "changes": [
+        "tink_b: window 0.56-1.26 s, gain +2.9 dB (float decode, peak-normalised to 0.9), fade-in 0.001 s / out 0.15 s -> audio/sfx/tink_b.wav (sha256 73cd5e128236)",
+        "key_1: window 0.56-1.26 s, gain +2.9 dB (float decode, peak-normalised to 0.9), fade-in 0.001 s / out 0.15 s -> audio/sfx/key_1.wav (sha256 73cd5e128236)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -94,7 +100,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:22.689777+00:00",
       "license_checked_at": "2026-11-03T04:02:22.689872+00:00",
-      "changes": [],
+      "changes": [
+        "tink_lid: window 0.0-0.2 s, gain -0.6 dB (float decode, peak-normalised to 0.9), fade-in 0.0005 s / out 0.04 s -> audio/sfx/tink_lid.wav (sha256 9d36215efe4c)",
+        "key_3: window 0.0-0.2 s, gain -0.6 dB (float decode, peak-normalised to 0.9), fade-in 0.0005 s / out 0.04 s -> audio/sfx/key_3.wav (sha256 9d36215efe4c)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -130,7 +139,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:24.754276+00:00",
       "license_checked_at": "2026-11-03T04:02:24.754287+00:00",
-      "changes": [],
+      "changes": [
+        "NOT USED in the film (rejected: preview peaks too low, would need ~+30 dB and raise the noise floor)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -166,7 +177,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:24.621719+00:00",
       "license_checked_at": "2026-11-03T04:02:24.621732+00:00",
-      "changes": [],
+      "changes": [
+        "NOT USED in the film (rejected: preview peaks too low, would need ~+30 dB and raise the noise floor)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -202,7 +215,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:24.926733+00:00",
       "license_checked_at": "2026-11-03T04:02:24.926747+00:00",
-      "changes": [],
+      "changes": [
+        "pat_a: window 0.0-0.13 s, gain +9.4 dB (float decode, peak-normalised to 0.9), fade-in 0.0005 s / out 0.03 s -> audio/sfx/pat_a.wav (sha256 4b19d379a8f6)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -238,7 +253,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:26.577844+00:00",
       "license_checked_at": "2026-11-03T04:02:26.577854+00:00",
-      "changes": [],
+      "changes": [
+        "thump: window 0.43-0.69 s, gain -2.0 dB (float decode, peak-normalised to 0.9), fade-in 0.002 s / out 0.12 s -> audio/sfx/thump.wav (sha256 acd58e74ef36)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -274,7 +291,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:26.817742+00:00",
       "license_checked_at": "2026-11-03T04:02:26.817755+00:00",
-      "changes": [],
+      "changes": [
+        "impact_big: window 1.0-3.6 s, gain -3.9 dB (float decode, peak-normalised to 0.9), fade-in 0.002 s / out 0.6 s -> audio/sfx/impact_big.wav (sha256 460947a11e7a)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -310,7 +329,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:26.932259+00:00",
       "license_checked_at": "2026-11-03T04:02:26.932271+00:00",
-      "changes": [],
+      "changes": [
+        "whoosh_air: window 0.22-1.27 s, gain +2.7 dB (float decode, peak-normalised to 0.9), fade-in 0.05 s / out 0.4 s -> audio/sfx/whoosh_air.wav (sha256 98d75e374018)",
+        "whoosh_exit: window 0.3-1.2 s, gain +2.7 dB (float decode, peak-normalised to 0.9), fade-in 0.04 s / out 0.35 s -> audio/sfx/whoosh_exit.wav (sha256 9e1ab27669d8)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -346,7 +368,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:28.345790+00:00",
       "license_checked_at": "2026-11-03T04:02:28.345805+00:00",
-      "changes": [],
+      "changes": [
+        "card_whip: window 0.05-0.29 s, gain +14.1 dB (float decode, peak-normalised to 0.9), fade-in 0.004 s / out 0.08 s -> audio/sfx/card_whip.wav (sha256 596ef1f934dd)",
+        "whoosh_short: window 0.0-0.28 s, gain +14.1 dB (float decode, peak-normalised to 0.9), fade-in 0.004 s / out 0.1 s -> audio/sfx/whoosh_short.wav (sha256 be33cab7eac7)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -382,7 +407,10 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:28.647115+00:00",
       "license_checked_at": "2026-11-03T04:02:28.647126+00:00",
-      "changes": [],
+      "changes": [
+        "riser_2s: window 0.65-3.05 s, gain +6.4 dB (float decode, peak-normalised to 0.9), fade-in 0.3 s / out 0.0 s -> audio/sfx/riser_2s.wav (sha256 9ad7302f2a91)",
+        "riser_plunge: window 2.55-3.05 s, gain +6.4 dB (float decode, peak-normalised to 0.9), fade-in 0.03 s / out 0.0 s -> audio/sfx/riser_plunge.wav (sha256 81959d5c34bb)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -418,7 +446,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:29.001595+00:00",
       "license_checked_at": "2026-11-03T04:02:29.001611+00:00",
-      "changes": [],
+      "changes": [
+        "sparkle_tail: window 0.15-2.2 s, gain +16.9 dB (float decode, peak-normalised to 0.9), fade-in 0.002 s / out 0.5 s -> audio/sfx/sparkle_tail.wav (sha256 c4dd5d4c78f6)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -454,7 +484,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:30.366874+00:00",
       "license_checked_at": "2026-11-03T04:02:30.366884+00:00",
-      "changes": [],
+      "changes": [
+        "bell_birth: window 0.2-1.8 s, gain +16.2 dB (float decode, peak-normalised to 0.9), fade-in 0.05 s / out 0.4 s -> audio/sfx/bell_birth.wav (sha256 74ef7c2c6eb6)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -490,7 +522,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:30.359510+00:00",
       "license_checked_at": "2026-11-03T04:02:30.359524+00:00",
-      "changes": [],
+      "changes": [
+        "bell_hi: window 0.0-0.65 s, gain +3.9 dB (float decode, peak-normalised to 0.9), fade-in 0.002 s / out 0.1 s -> audio/sfx/bell_hi.wav (sha256 942f551d3ff8)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -526,7 +560,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:30.827531+00:00",
       "license_checked_at": "2026-11-03T04:02:30.827543+00:00",
-      "changes": [],
+      "changes": [
+        "heartbeat: window 0.0-0.47 s, gain +9.0 dB (float decode, peak-normalised to 0.9), fade-in 0.002 s / out 0.05 s -> audio/sfx/heartbeat.wav (sha256 583766659c3c)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 48000,
@@ -562,7 +598,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:32.305069+00:00",
       "license_checked_at": "2026-11-03T04:02:32.305081+00:00",
-      "changes": [],
+      "changes": [
+        "pat_b: window 0.0-0.25 s, gain +15.2 dB (float decode, peak-normalised to 0.9), fade-in 0.001 s / out 0.08 s -> audio/sfx/pat_b.wav (sha256 9f1b62826a70)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -598,7 +636,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:34.260230+00:00",
       "license_checked_at": "2026-11-03T04:02:34.260244+00:00",
-      "changes": [],
+      "changes": [
+        "crickets: window 1.0-4.0 s, gain +13.8 dB (float decode, peak-normalised to 0.9), fade-in 0.3 s / out 0.4 s -> audio/sfx/crickets.wav (sha256 0bde2975eb9a)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,
@@ -634,7 +674,9 @@
       "is_preview": true,
       "downloaded_at": "2026-11-03T04:02:32.945366+00:00",
       "license_checked_at": "2026-11-03T04:02:32.945378+00:00",
-      "changes": [],
+      "changes": [
+        "wing_flap: window 0.2-1.8 s, gain +24.5 dB (float decode, peak-normalised to 0.9), fade-in 0.05 s / out 0.25 s -> audio/sfx/wing_flap.wav (sha256 7a50c4998f70)"
+      ],
       "analysis": {
         "codec": "mp3",
         "sample_rate": 44100,

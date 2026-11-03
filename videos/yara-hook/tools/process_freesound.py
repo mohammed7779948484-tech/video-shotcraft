@@ -15,7 +15,7 @@ SR = 48000
 
 # cue -> (freesound id, start s, duration s, fade-in s, fade-out s, why)
 CUES = {
-    'thump':        ('738633' if False else '428073', 0.43, 0.42, 0.002, 0.12, 'teaser cut hits: sub drop, window starts 60 ms before its energy peak (0.495 s)'),
+    'thump':        ('428073', 0.43, 0.26, 0.002, 0.12, 'teaser cut hits: sub drop; window starts 60 ms before its energy peak (0.495 s) and stops before the swell body so hit 3 does not run into the black beat'),
     'impact_big':   ('856174', 1.00, 2.60, 0.002, 0.60, 'flash + REVEAL impact: deep sub-bass drop, energy peak 1.035 s'),
     'tink_a':       ('738633', 0.44, 0.55, 0.001, 0.12, 'glass clink #1 (two drinking glasses), activity 0.47-0.77 s; preview peaks at +1.25 dBFS so it is normalised down'),
     'tink_b':       ('560298', 0.56, 0.70, 0.001, 0.15, 'glass clink #2 (different glass, double-sample alternation), energy peak 0.595 s'),
@@ -33,13 +33,16 @@ CUES = {
     'bell_hi':      ('759840', 0.00, 0.65, 0.002, 0.10, 'shining/ringing little bells: tagline lands'),
     'heartbeat':    ('384662', 0.00, 0.47, 0.002, 0.05, 'lub-dub heartbeat, used twice with falling level'),
     'crickets':     ('424871', 1.00, 3.00, 0.30, 0.40, 'night bed under the field (source 11.56 s, 3 s window)'),
+    'key_1':        ('560298', 0.56, 0.70, 0.001, 0.15, 'key fragment 1 of 3: real glass (replaces the synthetic G5 tone; reviewer: rising pitched triad read as a confirmation arpeggio)'),
+    'key_2':        ('738633', 0.44, 0.55, 0.001, 0.12, 'key fragment 2 of 3: real glass'),
+    'key_3':        ('262958', 0.00, 0.20, 0.0005, 0.04, 'key fragment 3 of 3: real glass tap'),
     'wing_flap':    ('561009', 0.20, 1.60, 0.05, 0.25, 'light wing flap foley for the hero flight (source peak is -25 dBFS: +22 dB gain)'),
 }
 
 def decode(path, start, dur):
-    cmd = ['ffmpeg', '-v', 'error', '-ss', str(start), '-t', str(dur), '-i', path, '-ac', '1', '-ar', str(SR), '-f', 's16le', '-']
+    cmd = ['ffmpeg', '-v', 'error', '-ss', str(start), '-t', str(dur), '-i', path, '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-']
     raw = subprocess.run(cmd, capture_output=True, check=True).stdout
-    return np.frombuffer(raw, '<i2').astype(float) / 32768
+    return np.frombuffer(raw, '<f4').astype(float)  # float: MP3 previews can decode above 0 dBFS; never clip before normalising
 
 def save(path, x):
     with wave.open(path, 'wb') as w:
@@ -70,8 +73,34 @@ for cue, (fid, start, dur, fi, fo, why) in CUES.items():
     }
     print(f'{cue:13s} <- fs:{fid:7s} gain {out[cue]["gain_db"]:+5.1f} dB  {n / SR:.2f}s')
 
+# ---- write the edit record back into the downloaded-asset manifest and credits (sfx-sourcing.md: record what was changed)
+fs_path = os.path.join(ROOT, 'fs', 'audio-manifest.json')
+fsm = json.load(open(fs_path))
+rows = fsm['assets'].values() if isinstance(fsm['assets'], dict) else fsm['assets']
+by_file = {}
+for cue, rec in out.items():
+    by_file.setdefault(rec['source'].split(':')[1], []).append(f"{cue}: window {rec['window_s'][0]}-{rec['window_s'][1]} s, gain {rec['gain_db']:+.1f} dB (float decode, peak-normalised to 0.9), fade-in {rec['fade_in_s']} s / out {rec['fade_out_s']} s -> {rec['file']} (sha256 {rec['sha256'][:12]})")
+for row in rows:
+    fid = row['id'].split(':')[1]
+    row['changes'] = by_file.get(fid, ['NOT USED in the film (rejected: preview peaks too low, would need ~+30 dB and raise the noise floor)'])
+json.dump(fsm, open(fs_path, 'w'), indent=2)
+import re
+cp = os.path.join(ROOT, 'fs', 'FREESOUND-CREDITS.md')
+txt = open(cp).read()
+blocks = txt.split('~~~text\n')
+new = [blocks[0]]
+for b in blocks[1:]:
+    m = re.match(r'fs-(\d+)\.mp3', b)
+    if m:
+        ch = by_file.get(m.group(1), ['NOT USED in the film (rejected: preview peaks too low)'])
+        b = re.sub(r'Edits: .*?\n', 'Edits: ' + ' | '.join(ch).replace('\\', '/') + '\n', b, count=1)
+    new.append(b)
+open(cp, 'w').write('~~~text\n'.join(new))
+
 mpath = os.path.join(ROOT, 'audio-manifest.json')
 m = json.load(open(mpath))
+for k in out:
+    m.get('items', {}).pop(k, None)  # superseded synthetic stand-ins
 m['freesound_cues'] = out
 m['note'] = ('Cues listed in freesound_cues are CC0 Freesound recordings (lossy MP3 previews, windowed + normalised by '
              'tools/process_freesound.py). The remaining SFX (ticks, key tones, shimmer, breath swell, room air) and the score are '

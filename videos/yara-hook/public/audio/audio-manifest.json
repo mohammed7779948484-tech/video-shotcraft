@@ -3,80 +3,15 @@
  "license": "Freesound cues: CC0-1.0 per source page (no attribution required; credits kept in public/audio/fs/FREESOUND-CREDITS.md). Synthesised audio: original work of this project.",
  "note": "Cues listed in freesound_cues are CC0 Freesound recordings (lossy MP3 previews, windowed + normalised by tools/process_freesound.py). The remaining SFX (ticks, key tones, shimmer, breath swell, room air) and the score are original synthesis (tools/make_audio.py). Nothing was auditioned by ear; measured only.",
  "items": {
-  "thump": {
-   "file": "audio/sfx/thump.wav",
-   "dur_s": 0.45,
-   "sha256": "04a59c91a067b5111d6b34d64c815fa72a28fcfd57dc34e90cf80104a2686385"
-  },
   "thump_soft": {
    "file": "audio/sfx/thump_soft.wav",
    "dur_s": 0.35,
    "sha256": "e3704b810052a5bc0daf3bafe618fb765e43aaf40cecd0603562a3506288be37"
   },
-  "impact_big": {
-   "file": "audio/sfx/impact_big.wav",
-   "dur_s": 2.6,
-   "sha256": "9acc8b8f67042820665d52ccaf623352779ab99d6f34d6c307764631dc4dece3"
-  },
-  "whoosh_short": {
-   "file": "audio/sfx/whoosh_short.wav",
-   "dur_s": 0.28,
-   "sha256": "747cefd03e3219b130d185c690f252cd7a6bfa3ec2883907e7309f8afd12b6d4"
-  },
-  "whoosh_air": {
-   "file": "audio/sfx/whoosh_air.wav",
-   "dur_s": 1.2,
-   "sha256": "67a4cac773da257b56b4a9469a2204fce5c40b6976e2f92bd844a505b634a6df"
-  },
-  "whoosh_exit": {
-   "file": "audio/sfx/whoosh_exit.wav",
-   "dur_s": 1.0,
-   "sha256": "b47fda55d30582e7949bd9ee4b4b4fef35f465333504a3859551e913a654caa1"
-  },
   "breath_swell": {
    "file": "audio/sfx/breath_swell.wav",
    "dur_s": 0.9,
    "sha256": "c541d44dad30a85089f85e86b3c39b95b8c76032215d5a7dba15181d1b0ca28f"
-  },
-  "riser_2s": {
-   "file": "audio/sfx/riser_2s.wav",
-   "dur_s": 2.4,
-   "sha256": "6c53a96fc81bb7949fccb8c91513f0b32cb5f52d633dce77c56101596b67f6bc"
-  },
-  "riser_plunge": {
-   "file": "audio/sfx/riser_plunge.wav",
-   "dur_s": 0.5,
-   "sha256": "55db53b0b96728985e7f1498bf2eef7c9cc9603683a7f59c242d8023cabb5254"
-  },
-  "tink_a": {
-   "file": "audio/sfx/tink_a.wav",
-   "dur_s": 0.7,
-   "sha256": "00e548ee735a4b24cc48a82a86ec8c2652b99938b9eda3bd259b610bc4ae9cb6"
-  },
-  "tink_b": {
-   "file": "audio/sfx/tink_b.wav",
-   "dur_s": 0.6,
-   "sha256": "dc00945377c130b7f9a34938ba79cabc54fa844c13000c81e7c8aff365f20580"
-  },
-  "tink_lid": {
-   "file": "audio/sfx/tink_lid.wav",
-   "dur_s": 0.9,
-   "sha256": "ec9e51ec8d26310cff743e8f18c657c19539cdfb21d7fbc20190c719f7b58679"
-  },
-  "bell_birth": {
-   "file": "audio/sfx/bell_birth.wav",
-   "dur_s": 1.6,
-   "sha256": "ab60de464e3adcac3a3e0df9b7c83df7e767950f6445576abc311c15f3853f85"
-  },
-  "bell_hi": {
-   "file": "audio/sfx/bell_hi.wav",
-   "dur_s": 1.4,
-   "sha256": "b9b956f658afa102d157c75ed9aaeaddefd884139b6d7b9f6e97d8aaef0e324f"
-  },
-  "sparkle_tail": {
-   "file": "audio/sfx/sparkle_tail.wav",
-   "dur_s": 2.2,
-   "sha256": "af5346ab13c6e55a03d244bae168a7c15164ffed881cb204a08ed57209dbafde"
   },
   "shimmer_up": {
    "file": "audio/sfx/shimmer_up.wav",
@@ -97,46 +32,6 @@
    "file": "audio/sfx/tick_c.wav",
    "dur_s": 0.22,
    "sha256": "b4788df1e008fa4c3632852a8c3462aae4cbe95be8b5afab3559ee8668b8fded"
-  },
-  "key_1": {
-   "file": "audio/sfx/key_1.wav",
-   "dur_s": 0.9,
-   "sha256": "dfa2aff18a931f28137a59696fa2c91271fab0e10e355c0af3304b7c473eb453"
-  },
-  "key_2": {
-   "file": "audio/sfx/key_2.wav",
-   "dur_s": 0.9,
-   "sha256": "5cfb53e05f0628968689e8665a156004993cd6c8ea7e91b01174c2a67b8e9b85"
-  },
-  "key_3": {
-   "file": "audio/sfx/key_3.wav",
-   "dur_s": 0.9,
-   "sha256": "002aee3232704dba2ea706ec7a14624b56712b71b105889e264c08f5366eceb8"
-  },
-  "pat_a": {
-   "file": "audio/sfx/pat_a.wav",
-   "dur_s": 0.2,
-   "sha256": "c2789b13b3078de9b9a08964b4b7d2f17f599b1ae12a54e1dedc14feda994b88"
-  },
-  "pat_b": {
-   "file": "audio/sfx/pat_b.wav",
-   "dur_s": 0.2,
-   "sha256": "69c638c3e31716f35828f891e3944b0aeef3a1a78c28140c969d3a1e28cc4111"
-  },
-  "card_whip": {
-   "file": "audio/sfx/card_whip.wav",
-   "dur_s": 0.22,
-   "sha256": "bd826264964561c28edf4787a1e3652d128086776d1a5f474eb224f6bdc52fbd"
-  },
-  "heartbeat": {
-   "file": "audio/sfx/heartbeat.wav",
-   "dur_s": 1.1,
-   "sha256": "0441ce844db2819ff13b59da12f49d6e6f6a7bd5673099926cd7fe399e093b4e"
-  },
-  "crickets": {
-   "file": "audio/sfx/crickets.wav",
-   "dur_s": 6.0,
-   "sha256": "b342c7516319ed5bda9d1c093ad0b12073ea5b6a004484c281639e039d7cb3b2"
   },
   "room_air": {
    "file": "audio/sfx/room_air.wav",
@@ -160,15 +55,15 @@
    "source_sha256": "cd886173aa0270c9adbdb04fa14eb7f4cde53bd70506a4bf8d6e14de00e6bfd9",
    "window_s": [
     0.43,
-    0.85
+    0.69
    ],
-   "gain_db": 1.0,
-   "result_peak_dbfs": -0.92,
+   "gain_db": -2.0,
+   "result_peak_dbfs": -0.96,
    "fade_in_s": 0.002,
    "fade_out_s": 0.12,
    "file": "audio/sfx/thump.wav",
-   "sha256": "c761d7368505df6cd9f231020a9daf0f2b17f13731c97e20aa58f8de029aedd9",
-   "why": "teaser cut hits: sub drop, window starts 60 ms before its energy peak (0.495 s)",
+   "sha256": "acd58e74ef36197237b94e52166a51ad1727737c4f86df7a6880fd0bbe36f230",
+   "why": "teaser cut hits: sub drop; window starts 60 ms before its energy peak (0.495 s) and stops before the swell body so hit 3 does not run into the black beat",
    "auditioned_by_ear": false
   },
   "impact_big": {
@@ -183,12 +78,12 @@
     1.0,
     3.6
    ],
-   "gain_db": -0.9,
+   "gain_db": -3.9,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.002,
    "fade_out_s": 0.6,
    "file": "audio/sfx/impact_big.wav",
-   "sha256": "75474ddc7587f67d05a67d3e2599c3d6f0da9c3275f92bf2f059fdec673850df",
+   "sha256": "460947a11e7a9763b84fa929cf4565fb8eb3113305a59a4f58267278d2746fb9",
    "why": "flash + REVEAL impact: deep sub-bass drop, energy peak 1.035 s",
    "auditioned_by_ear": false
   },
@@ -204,12 +99,12 @@
     0.44,
     0.99
    ],
-   "gain_db": -0.9,
+   "gain_db": -5.2,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.001,
    "fade_out_s": 0.12,
    "file": "audio/sfx/tink_a.wav",
-   "sha256": "1daed9343eacbfd3f795a84c92356cdd5ba743d7de1edcf3521806b5871a13eb",
+   "sha256": "ddfd9db994fd5ec2a0ed195e10bee3409d9414606d2b9e140cb6d792a6b05a99",
    "why": "glass clink #1 (two drinking glasses), activity 0.47-0.77 s; preview peaks at +1.25 dBFS so it is normalised down",
    "auditioned_by_ear": false
   },
@@ -230,7 +125,7 @@
    "fade_in_s": 0.001,
    "fade_out_s": 0.15,
    "file": "audio/sfx/tink_b.wav",
-   "sha256": "746d9804cce2b2930b156c9fe8234113db41d97cc9581d1b660595fc12f92ee4",
+   "sha256": "73cd5e1282366bd82111e8d8a3274532365d68f0f3d889036b9e5bb089ed08d7",
    "why": "glass clink #2 (different glass, double-sample alternation), energy peak 0.595 s",
    "auditioned_by_ear": false
   },
@@ -251,7 +146,7 @@
    "fade_in_s": 0.0005,
    "fade_out_s": 0.04,
    "file": "audio/sfx/tink_lid.wav",
-   "sha256": "ffecdd38e61b61bfe22023d85684f5aee490b37b9b3db31c4c49259fd2715f2c",
+   "sha256": "9d36215efe4c8a389433964346bc6f78c4d35934b3a9bfb0f804a073aee1bd63",
    "why": "glass tap, 0.2 s, hero lands / lid note",
    "auditioned_by_ear": false
   },
@@ -267,12 +162,12 @@
     0.05,
     0.29
    ],
-   "gain_db": 17.1,
+   "gain_db": 14.1,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.004,
    "fade_out_s": 0.08,
    "file": "audio/sfx/card_whip.wav",
-   "sha256": "73746aefa373bf1bf3d89983792d01c657e205b2d1af0707a679d3974f75f8c1",
+   "sha256": "596ef1f934ddc27fe06723b8b0ed7ba3560fb035f07e8976a26d2739fc41be4f",
    "why": "short whoosh for a card leaving the glow",
    "auditioned_by_ear": false
   },
@@ -288,12 +183,12 @@
     0.0,
     0.13
    ],
-   "gain_db": 12.4,
+   "gain_db": 9.4,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.0005,
    "fade_out_s": 0.03,
    "file": "audio/sfx/pat_a.wav",
-   "sha256": "2366d2ef59da63246d810df128d600f0b9fdf1513a071d15454758767152e4f7",
+   "sha256": "4b19d379a8f692fab05f5ef44e995ba659627520ea39424077c51143e985883b",
    "why": "playing-card snap for the landing",
    "auditioned_by_ear": false
   },
@@ -314,7 +209,7 @@
    "fade_in_s": 0.001,
    "fade_out_s": 0.08,
    "file": "audio/sfx/pat_b.wav",
-   "sha256": "b30f11accb828d733d10227afd89ec0dce1f1bf5fdd0cf356fc28fb683f754ac",
+   "sha256": "9f1b62826a70a09061561b31cc357203157a4ecd67aba5b285f2e0a42541de03",
    "why": "soft sub kick (felt body of the card landing); different timbre from pat_a so alternation is real",
    "auditioned_by_ear": false
   },
@@ -330,12 +225,12 @@
     0.22,
     1.27
    ],
-   "gain_db": 5.7,
+   "gain_db": 2.7,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.05,
    "fade_out_s": 0.4,
    "file": "audio/sfx/whoosh_air.wav",
-   "sha256": "a7f5e42e2b683d8668179399077081f9b63a1016e3a94487c29dca6221d9ee62",
+   "sha256": "98d75e374018ee1b84095ef749932429ff80d4395208fa33635607c9d16b7a70",
    "why": "soft air whoosh for pull-back and dissolve (light transition)",
    "auditioned_by_ear": false
   },
@@ -351,12 +246,12 @@
     0.3,
     1.2
    ],
-   "gain_db": 5.7,
+   "gain_db": 2.7,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.04,
    "fade_out_s": 0.35,
    "file": "audio/sfx/whoosh_exit.wav",
-   "sha256": "ab3d7d29b00db1d1b00b78b0eba61402c8c4ec3cda870c15269ddaa7c1af940a",
+   "sha256": "9e1ab27669d8a0a94823bc0b6a6d298e1f7624720a0d3227591fa70cb9b4d9d8",
    "why": "hero exits through the window",
    "auditioned_by_ear": false
   },
@@ -372,12 +267,12 @@
     0.0,
     0.28
    ],
-   "gain_db": 17.1,
+   "gain_db": 14.1,
    "result_peak_dbfs": -2.99,
    "fade_in_s": 0.004,
    "fade_out_s": 0.1,
    "file": "audio/sfx/whoosh_short.wav",
-   "sha256": "89fe0b1a9bf89d33336df01c1d8813d392b58860f4c31635b5c5ea55f15105a3",
+   "sha256": "be33cab7eac728533c3d76efb250265bdcaaf2ffd835b51a466fe2e8a3329944",
    "why": "lead-in whoosh before teaser cuts",
    "auditioned_by_ear": false
   },
@@ -393,12 +288,12 @@
     0.65,
     3.05
    ],
-   "gain_db": 9.4,
+   "gain_db": 6.4,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.3,
    "fade_out_s": 0.0,
    "file": "audio/sfx/riser_2s.wav",
-   "sha256": "466c21eb66259152b96a496997bb82f3f3986d3013d5a9706f6a4d6ea300f2eb",
+   "sha256": "9ad7302f2a91874e8455cb86b0d89f82477d2298dd80cd47895455e86c7400f2",
    "why": "riser into the reveal; source ends at its peak (2.745 s) so the end lands on the pin",
    "auditioned_by_ear": false
   },
@@ -414,12 +309,12 @@
     2.55,
     3.05
    ],
-   "gain_db": 9.4,
+   "gain_db": 6.4,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.03,
    "fade_out_s": 0.0,
    "file": "audio/sfx/riser_plunge.wav",
-   "sha256": "fe2df7478f79435b88d2574646f197efea060a82c5b76f7e86361ca57b38d6a0",
+   "sha256": "81959d5c34bbd6b9055510a66b6acf72551972377e3a1cb51c63345c0e6daebc",
    "why": "last 0.5 s of the same riser: plunge into the glass",
    "auditioned_by_ear": false
   },
@@ -440,7 +335,7 @@
    "fade_in_s": 0.002,
    "fade_out_s": 0.5,
    "file": "audio/sfx/sparkle_tail.wav",
-   "sha256": "b886ed872409cbf08537a0d22c96b748238d2006de28ae9a89b7d7c950f874a1",
+   "sha256": "c4dd5d4c78f63967fa1cf746edfe7b74192357e5b939bbcd4c5aa34afc7f0b57",
    "why": "crystal twinkle after the impact, energy peak 0.195 s",
    "auditioned_by_ear": false
   },
@@ -456,12 +351,12 @@
     0.2,
     1.8
    ],
-   "gain_db": 19.2,
+   "gain_db": 16.2,
    "result_peak_dbfs": -0.92,
    "fade_in_s": 0.05,
    "fade_out_s": 0.4,
    "file": "audio/sfx/bell_birth.wav",
-   "sha256": "9b2456922a4eaf6b2c2eb8d667a199155d9b323de9eb189cd859225b625e00e8",
+   "sha256": "74ef7c2c6eb6a58865828d3e9758c9631270bd4d7e0af65c44db28f0a14108ca",
    "why": "mysterious sparkle flourish: the firefly condenses",
    "auditioned_by_ear": false
   },
@@ -482,7 +377,7 @@
    "fade_in_s": 0.002,
    "fade_out_s": 0.1,
    "file": "audio/sfx/bell_hi.wav",
-   "sha256": "48377a05c9976c84900d4090cc056299fc8194ffbdfbc77c2174f028dd875791",
+   "sha256": "942f551d3ff849d47caf8bbf35e92315412baf679116dbdd22eb7a7e479a49cb",
    "why": "shining/ringing little bells: tagline lands",
    "auditioned_by_ear": false
   },
@@ -503,7 +398,7 @@
    "fade_in_s": 0.002,
    "fade_out_s": 0.05,
    "file": "audio/sfx/heartbeat.wav",
-   "sha256": "54a1abd0280130a266b7995cbfc1d06de3f39c018d66ccd5f5d69a5b50b94f0a",
+   "sha256": "583766659c3c53aa58e8215cbae1efa65e53fb057ba54f050376bc2755f6bdef",
    "why": "lub-dub heartbeat, used twice with falling level",
    "auditioned_by_ear": false
   },
@@ -519,13 +414,76 @@
     1.0,
     4.0
    ],
-   "gain_db": 16.8,
+   "gain_db": 13.8,
    "result_peak_dbfs": -1.11,
    "fade_in_s": 0.3,
    "fade_out_s": 0.4,
    "file": "audio/sfx/crickets.wav",
-   "sha256": "7ccb72e720d003168cc4dd025f3ff3ae59d167529ff01cbd590439dae787b326",
+   "sha256": "0bde2975eb9af28eef6683c2de164850630eafdaa1b737aaed1a48988a2e37ae",
    "why": "night bed under the field (source 11.56 s, 3 s window)",
+   "auditioned_by_ear": false
+  },
+  "key_1": {
+   "source": "fs:560298",
+   "title": "Glass Clink1.m4a",
+   "author": "RoyalRose",
+   "page": "https://freesound.org/people/RoyalRose/sounds/560298/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "5cf65a117281fcb5c44d9bde625fc4001f61be3559808ed8248353fb3bff2471",
+   "window_s": [
+    0.56,
+    1.26
+   ],
+   "gain_db": 2.9,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.15,
+   "file": "audio/sfx/key_1.wav",
+   "sha256": "73cd5e1282366bd82111e8d8a3274532365d68f0f3d889036b9e5bb089ed08d7",
+   "why": "key fragment 1 of 3: real glass (replaces the synthetic G5 tone; reviewer: rising pitched triad read as a confirmation arpeggio)",
+   "auditioned_by_ear": false
+  },
+  "key_2": {
+   "source": "fs:738633",
+   "title": "glasses clinking",
+   "author": "waheegle",
+   "page": "https://freesound.org/people/waheegle/sounds/738633/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "66dae9e73d042c3a49cec962cd51bc574bda8d6acc684a6917e6e7bca44ebf61",
+   "window_s": [
+    0.44,
+    0.99
+   ],
+   "gain_db": -5.2,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.001,
+   "fade_out_s": 0.12,
+   "file": "audio/sfx/key_2.wav",
+   "sha256": "ddfd9db994fd5ec2a0ed195e10bee3409d9414606d2b9e140cb6d792a6b05a99",
+   "why": "key fragment 2 of 3: real glass",
+   "auditioned_by_ear": false
+  },
+  "key_3": {
+   "source": "fs:262958",
+   "title": "Glass Tap.wav",
+   "author": "Unicornaphobist",
+   "page": "https://freesound.org/people/Unicornaphobist/sounds/262958/",
+   "license": "http://creativecommons.org/publicdomain/zero/1.0/",
+   "source_file_is_preview_mp3": true,
+   "source_sha256": "392752ae436412efb86fff705930284bceca610f82ff901941b336a9627c3248",
+   "window_s": [
+    0.0,
+    0.2
+   ],
+   "gain_db": -0.6,
+   "result_peak_dbfs": -0.92,
+   "fade_in_s": 0.0005,
+   "fade_out_s": 0.04,
+   "file": "audio/sfx/key_3.wav",
+   "sha256": "9d36215efe4c8a389433964346bc6f78c4d35934b3a9bfb0f804a073aee1bd63",
+   "why": "key fragment 3 of 3: real glass tap",
    "auditioned_by_ear": false
   },
   "wing_flap": {
@@ -545,7 +503,7 @@
    "fade_in_s": 0.05,
    "fade_out_s": 0.25,
    "file": "audio/sfx/wing_flap.wav",
-   "sha256": "a4e1c5ad33c37b69ebc23d33293a7df22002ff97c2a74f113d19542c71043164",
+   "sha256": "7a50c4998f704c09f5dc8542b0fd9642fbcb8ae5c76cda11976de70ff4867994",
    "why": "light wing flap foley for the hero flight (source peak is -25 dBFS: +22 dB gain)",
    "auditioned_by_ear": false
   }

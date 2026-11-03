@@ -14,7 +14,7 @@ publishable, reviewed result). Stages 0–3 below are the Agent's recorded decis
 | Format | **1080×1920 (9:16), 30 fps, 20.0 s (600 f), Arabic RTL**. | User asked 15–20 s; vertical is the native ad format. Upper bound of the range chosen to give holds (R1/R3). |
 | Data | Everything is invented. No real person, customer, or live data. The 5 note cards are neutral fake notes. | Q1 data口径. |
 | CTA | "قريبًا · YARA'" (coming soon). | The product is fictional: no availability/store claim is made. Replace when a real product exists. |
-| Audio | Original procedural score + SFX (see §5). | Freesound was unreachable (HTTP 403 through the sandbox proxy); skill forbids silently falling back to the old shared library. |
+| Audio | CC0 Freesound SFX (19 cues) + original synthesised score and a few stylised cues (see §5). | Freesound answered HTTP 403 early in the build and worked later; the main SFX were then replaced by real recordings. |
 
 ## 1. Visual direction (grown from the product, not a promo skin)
 
@@ -72,12 +72,13 @@ analysis stored in `public/audio/fs/audio-manifest.json`, credits in `FREESOUND-
 glass clinks ×3 (fs:738633, fs:560298, fs:262958 — jar arrivals alternate two different glasses, lid note a third),
 card snap + soft sub kick (fs:120508, fs:784658 — alternating landings), whooshes (fs:701104, fs:267950),
 riser (fs:685256), sub-bass drop and boom (fs:428073 teaser hits, fs:856174 flash + REVEAL impact),
-crystal twinkle / sparkle flourish / little bells (fs:639429, fs:844398, fs:759840), heartbeat (fs:384662),
+crystal twinkle / sparkle flourish / little bells (fs:639429, fs:844398, fs:759840), three key-fragment glass hits (re-using the glass files, so no synthetic confirmation-arpeggio), heartbeat (fs:384662),
 night crickets (fs:424871), wing-flap foley (fs:561009). `tools/process_freesound.py` cuts the action window (a few ms
 before each energy peak), peak-normalises to 0.9 (some sources were as quiet as −34 dBFS; one preview peaked at +1.25 dBFS),
 fades it and logs every cut/gain in `audio-manifest.json -> freesound_cues`. The files are **lossy MP3 previews**, not
 uploader originals. Two paper-slide candidates (fs:154403, fs:648387) were downloaded and **rejected**: their previews peak at −34 / −41 dBFS, so they would need +30 dB and bring the noise floor with them; they stay in `public/audio/fs/` unused.
-**Still synthesised (`tools/make_audio.py`)**: ignition ticks, three key tones, shimmer-up, breath swell, room air, and the whole
+Source notes: fs:856174's description says it was made with AI sound-design tools; fs:428073 is a synthesised drum; fs:384662 is a constructed heartbeat; fs:784658 is the uploader's own heartbeat on a contact mic used as a sub-kick — so not every Freesound cue is a field recording (the glass, crickets, whooshes and wing foley are).
+**Still synthesised (`tools/make_audio.py`)**: the 23 ignition ticks (deliberate stylised "lantern flicker", short noise burst + decaying sine; flagged: accelerating pitched ticks can read as collect-bleeps), shimmer-up, breath swell, room air, and the whole
 **score** (Dm → B♭ → Gm → F → D-major resolution pad + harp plucks pinned to arrivals/cards/keys).
 Vocabulary follows S1 (riser/impact/sparkle/whoosh; glass/paper foley; no game bleeps). Real silences at the teaser
 black beat and the night→jar black beat. Pins: declarative table in `src/SfxLayer.tsx`, derived from scene constants.
@@ -113,5 +114,5 @@ Deliveries: with score, and without score (SFX kept) via `--props=props-nobgm.js
 - **Nothing was auditioned by ear** — selection is by source description, analysis, rating/downloads, and measurements
   (loudness, peaks, per-segment RMS). A human listen pass before posting is recommended; any file can be swapped in
   `public/audio/sfx/` (names are the pin keys in `src/SfxLayer.tsx`).
-- Mastering after render (ffmpeg, audio only, `tools/master.sh`): +3.3 dB gain, limiter 0.84 (−1.5 dBFS), 0.4 s fade-out,
+- Mastering after render (ffmpeg, audio only, `tools/master.sh`): +3.9 dB gain, limiter 0.84 (−1.5 dBFS), 0.4 s fade-out,
   trimmed to 20.000 s. Result ≈ −14 LUFS integrated, sample peak ≈ −1.5 dBFS. Both deliveries get identical treatment.

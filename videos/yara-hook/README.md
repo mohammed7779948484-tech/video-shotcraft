@@ -30,4 +30,5 @@ npx remotion still src/index.ts YaraHook out/qa/frame.png --frame=548           
 - Compensation: `OUTPUT_LAG_F = 1.3` subtracted once in `src/SfxLayer.tsx` (`from = round(pin − 1.3)`), not scattered per cue.
   Residual: rounding always yields `pin − 1` frames, so cues land ≈ +0.38 f (13 ms) late, all in the same direction; the cue
   pinned at frame 0 is clamped (+1.38 f). Score plucks/pulses (`bgm.wav`) are musical events placed without this offset.
+- Re-probed on the Freesound mix (independent cross-correlation, 2026-11-03): sharp cues land +0.3…+0.6 f late, i.e. the same constant holds. Slow-attack cues (whooshes, riser, crickets, wing flap, sparkle) cannot be measured reliably.
 - Not delivered: a full round-trip error table for every cue.
