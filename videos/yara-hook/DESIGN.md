@@ -76,7 +76,7 @@ crystal twinkle / sparkle flourish / little bells (fs:639429, fs:844398, fs:7598
 night crickets (fs:424871), wing-flap foley (fs:561009). `tools/process_freesound.py` cuts the action window (a few ms
 before each energy peak), peak-normalises to 0.9 (some sources were as quiet as −34 dBFS; one preview peaked at +1.25 dBFS),
 fades it and logs every cut/gain in `audio-manifest.json -> freesound_cues`. The files are **lossy MP3 previews**, not
-uploader originals.
+uploader originals. Two paper-slide candidates (fs:154403, fs:648387) were downloaded and **rejected**: their previews peak at −34 / −41 dBFS, so they would need +30 dB and bring the noise floor with them; they stay in `public/audio/fs/` unused.
 **Still synthesised (`tools/make_audio.py`)**: ignition ticks, three key tones, shimmer-up, breath swell, room air, and the whole
 **score** (Dm → B♭ → Gm → F → D-major resolution pad + harp plucks pinned to arrivals/cards/keys).
 Vocabulary follows S1 (riser/impact/sparkle/whoosh; glass/paper foley; no game bleeps). Real silences at the teaser
