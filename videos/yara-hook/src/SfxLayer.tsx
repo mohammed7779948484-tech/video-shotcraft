@@ -36,8 +36,8 @@ add({ from: S.desk.from + 98, src: 'whoosh_exit', volume: 0.4, dur: 34, note: 'h
 add({ from: S.night.from, src: 'whoosh_air', volume: 0.3, dur: 40, note: 'pull-back from the hero to the wide field' });
 add({ from: S.night.from, src: 'crickets', volume: 0.18, dur: 84, fadeIn: 10, fadeOut: 10, note: 'night bed' });
 [...FLIES].map((a) => a.die).sort((a, b) => a - b).filter((_, i) => i % 7 === 3).forEach((d, i) => add({ from: S.night.from + Math.round(d), src: 'tick_c', volume: 0.09 - i * 0.004, dur: 6, note: 'a firefly goes out' }));
-add({ from: S.night.from + 60, src: 'heartbeat', volume: 0.38, dur: 33, note: 'hero heartbeat 1' });
-add({ from: S.night.from + 72, src: 'heartbeat', volume: 0.26, dur: 33, fadeOut: 8, note: 'hero heartbeat 2 (failing)' });
+add({ from: S.night.from + 60, src: 'heartbeat', volume: 0.38, dur: 22, fadeOut: 4, note: 'hero heartbeat 1' });
+add({ from: S.night.from + 72, src: 'heartbeat', volume: 0.26, dur: 11, fadeOut: 5, note: 'hero heartbeat 2 (failing); must die before the black beat at night+84' });
 
 // --- jar: voice wakes the field; every arrival = tink on the same frame as the glow surge
 add({ from: S.jar.from + 4, src: 'breath_swell', volume: 0.28, dur: 28, note: 'voice pill appears' });

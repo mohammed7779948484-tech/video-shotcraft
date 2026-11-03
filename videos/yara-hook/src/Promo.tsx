@@ -45,7 +45,7 @@ export const Promo: React.FC<{ bgm?: boolean }> = ({ bgm = true }) => {
     body = (
       <>
         <Desk f={desk} />
-        <Caption text="أفكارك يراعات." f={desk} start={50} y={880} out={104} accent={[1]} />
+        <Caption text="أفكارك يراعات." f={desk} start={50} y={880} cx={330} out={106} accent={[1]} />
         <AbsoluteFill style={{ background: '#000', opacity: 1 - fade }} />
       </>
     );

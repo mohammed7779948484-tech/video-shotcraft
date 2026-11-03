@@ -107,12 +107,12 @@ export const Vignette: React.FC<{ strength?: number }> = ({ strength = 0.6 }) =>
  */
 export const Caption: React.FC<{
   text: string; f: number; start: number; y: number; size?: number; weight?: number; color?: string;
-  gap?: number; dur?: number; out?: number; accent?: number[]; scrim?: boolean;
-}> = ({ text, f, start, y, size = 78, weight = 700, color = C.ink, gap = 4, dur = 22, out, accent = [], scrim = true }) => {
+  gap?: number; dur?: number; out?: number; accent?: number[]; scrim?: boolean; cx?: number;
+}> = ({ text, f, start, y, cx = 540, size = 78, weight = 700, color = C.ink, gap = 4, dur = 22, out, accent = [], scrim = true }) => {
   const words = text.split(' ');
   const outP = out === undefined ? 0 : ramp(f, out, 10, EASE.swift);
   return (
-    <div style={{ position: 'absolute', left: 0, right: 0, top: y, display: 'flex', justifyContent: 'center', direction: 'rtl', opacity: 1 - outP, pointerEvents: 'none' }}>
+    <div style={{ position: 'absolute', left: cx - 540, right: 540 - cx, top: y, display: 'flex', justifyContent: 'center', direction: 'rtl', opacity: 1 - outP, pointerEvents: 'none' }}>
       {scrim && (
         <div style={{ position: 'absolute', left: 40, right: 40, top: -70, bottom: -70, background: 'radial-gradient(ellipse 55% 50% at 50% 50%, rgba(3,5,12,0.55), rgba(3,5,12,0))' }} />
       )}

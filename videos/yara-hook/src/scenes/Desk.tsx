@@ -8,7 +8,7 @@ import { FireflyBug, Glow, Mote } from '../lib/fx';
 export const DESK_DUR = 132;
 
 const NIB: Pt = { x: 596, y: 1372 };
-const HOVER: Pt = { x: 330, y: 830 };
+const HOVER: Pt = { x: 790, y: 860 }; // waits by the open window, clear of the caption on the left
 const WINDOW_EXIT: Pt = { x: 786, y: 452 };
 
 // camera keyframes: centre of view in world px + zoom, eased between (monotone, no pops)
@@ -27,9 +27,9 @@ export const heroPos = (f: number): { p: Pt; s: number; rot: number; lit: number
   const born = ramp(f, 50, 14, EASE.overshoot); // condense
   const lift = ramp(f, 56, 40, EASE.smooth);
   const exit = ramp(f, 100, 32, EASE.smooth);
-  const p1 = bez3(NIB, { x: NIB.x - 40, y: NIB.y - 200 }, { x: 420, y: 1060 }, HOVER, lift);
+  const p1 = bez3(NIB, { x: NIB.x + 40, y: NIB.y - 230 }, { x: 760, y: 1130 }, HOVER, lift);
   const bob = Math.sin(f * 0.11) * 14 * ramp(f, 80, 14, EASE.out) * (1 - exit);
-  const p2 = bez3(HOVER, { x: 430, y: 760 }, { x: 640, y: 620 }, WINDOW_EXIT, exit);
+  const p2 = bez3(HOVER, { x: 660, y: 770 }, { x: 610, y: 610 }, WINDOW_EXIT, exit);
   const p = { x: mix(p1.x, p2.x, exit > 0 ? 1 : 0) , y: 0 };
   const pos = exit > 0 ? p2 : p1;
   p.x = pos.x; p.y = pos.y + bob;
